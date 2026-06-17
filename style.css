@@ -389,3 +389,14 @@ th {
         max-width: 800px;
     }
 }
+
+/* Custom Helper Classes */
+.text-danger { color: #d32f2f; }
+.text-example { color: #D97706; font-weight: 700; }
+.text-secondary-muted { color: var(--secondary); }
+.action-espirito { color: var(--c-espirito); font-weight: bold; }
+.action-inimigo { color: var(--c-inimigo); font-weight: bold; }
+.action-espirito-normal { color: var(--c-espirito); }
+.action-secondary { color: var(--secondary); }
+.tag-audio { background: #fce7f3; color: #db2777; }
+.text-uppercase-bold { font-weight: bold; text-transform: uppercase; }
