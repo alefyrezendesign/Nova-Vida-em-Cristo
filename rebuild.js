@@ -21,7 +21,7 @@ try {
     </div>
 </nav>
 
-<!-- Drawer Menu -->
+<!-- Custom Audio Player UI -->\n<div class="custom-audio-player hidden" id="custom-audio-player">\n    <div class="player-header">\n        <span id="player-title">Trilha</span>\n        <button id="player-close" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>\n    </div>\n    <div class="player-controls">\n        <button id="player-play"><i class="fa-solid fa-play"></i></button>\n        <div class="player-timeline-container">\n            <input type="range" id="player-timeline" value="0" min="0" max="100" step="1">\n            <div class="player-time">\n                <span id="player-current-time">0:00</span>\n                <span id="player-total-time">0:00</span>\n            </div>\n        </div>\n    </div>\n    <div class="player-options">\n        <label><input type="checkbox" id="use-fade" checked> FADE IN/OUT (Transição Suave)</label>\n    </div>\n</div>\n\n<!-- Drawer Menu -->
 <div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
 <div class="drawer-menu" id="drawer-menu">
     <div class="drawer-header">

@@ -11,6 +11,9 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 
+    
+
+
     <meta property="og:title" content="O Inimigo no Meu Lar - Roteiro Teatral">
     <meta property="og:description" content="Roteiro completo da peça teatral 'O Inimigo no Meu Lar'. Uma experiência digital interativa com divisão por atos.">
     <meta property="og:image" content="https://alefyrezendesign.github.io/inimigo-do-meu-lar-teatro-ecd/simbol-encontro-horizontal-claro.png">
@@ -36,6 +39,42 @@
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 </nav>
+
+<!-- Custom Audio Player UI -->
+<div class="custom-audio-player hidden" id="custom-audio-player">
+    <div class="player-header">
+        <span id="player-title">Trilha</span>
+        <button id="player-close" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="player-controls">
+        <button id="player-play"><i class="fa-solid fa-play"></i></button>
+        <div class="player-timeline-container">
+            <input type="range" id="player-timeline" value="0" min="0" max="100" step="1">
+            <div class="player-time">
+                <span id="player-current-time">0:00</span>
+                <span id="player-total-time">0:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="player-options">
+        <label><input type="checkbox" id="use-fade" checked> FADE IN/OUT (Transi��o Suave)</label>
+    </div>
+</div>
+
+<!-- Drawer Menu -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
+<div class="drawer-menu" id="drawer-menu">
+    <div class="drawer-header">
+        <h3>Índice</h3>
+        <button id="close-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-list" id="drawer-list">
+        <!-- JS vai preencher -->
+    </ul>
+</div>
+
+
+
 
 <!-- Drawer Menu -->
 <div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
@@ -77,6 +116,8 @@
                 <p class="hero-subtitle">Roteiro Completo</p>
                 <button class="btn-primary" onclick="startReading()">Iniciar Leitura <i class="fa-solid fa-arrow-down"></i></button>
             </div>
+        </section>
+
         </section>
 
         </section>
