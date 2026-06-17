@@ -34,10 +34,8 @@ try {
 </div>
 `;
 
-    // Strip out ANY existing top-nav or header completely
     html = html.replace(/<header class="top-nav" id="topNav">[\s\S]*?<\/header>/g, '');
     html = html.replace(/<nav class="top-nav.*?<\/nav>/igs, '');
-    // Insert new header right after <body>
     html = html.replace(/<body>/, '<body>\n' + new_header);
 
     // 2. Fix Hero Section
@@ -59,30 +57,22 @@ try {
 </div>
 `;
     html = html.replace(/<section class="hero" id="hero">[\s\S]*?<\/section>/g, new_hero);
-    // remove any existing trigger warnings
     html = html.replace(/<div class="trigger-warning" id="trigger-warning">[\s\S]*?<\/div>\s*<\/div>/g, '');
 
     // 3. Fix Accordions to Scene-Section
-    // Convert "Detalhes da Peça"
     html = html.replace(/<div class="details-section">\s*<h2 class="details-title">(.*?)<\/h2>/g, '<section class="scene-section expanded" id="scene-0" data-title="$1">\n<div class="scene-header accordion-header" onclick="toggleScene(this)">\n  <div class="scene-title-wrapper">\n    <h2 class="scene-title">$1</h2>\n    <i class="fa-solid fa-chevron-down toggle-icon"></i>\n  </div>\n  <div class="scene-divider"></div>\n</div>\n<div class="scene-content">');
     html = html.replace(/<!-- Scene 1:/g, '</section>\n\n        <!-- Scene 1:');
-
-    // Convert other accordions
     html = html.replace(/<section class="scene accordion[^"]*" id="(scene-\d+)" data-title="(.*?)">/g, '<section class="scene-section expanded" id="$1" data-title="$2">');
     html = html.replace(/<div class="accordion-header"[^>]*>\s*<h2>(.*?)<\/h2>\s*<i class="fa-solid fa-chevron-down toggle-icon"><\/i>\s*<\/div>/g, '<div class="scene-header accordion-header" onclick="toggleScene(this)">\n  <div class="scene-title-wrapper">\n    <h2 class="scene-title">$1</h2>\n    <i class="fa-solid fa-chevron-down toggle-icon"></i>\n  </div>\n  <div class="scene-divider"></div>\n</div>');
     html = html.replace(/<div class="accordion-content">/g, '<div class="scene-content">');
 
     // 4. Rubricas (Stage Directions)
-    // Replace <span class="action-text"> with correct markup
     html = html.replace(/<span class="action-text[^"]*">(.*?)<\/span>/g, (match, p1) => {
-        let text = p1.trim();
-        text = text.replace(/^[\[\(](.*?)[\]\)]$/, '$1');
+        let text = p1.trim().replace(/^[\[\(](.*?)[\]\)]$/, '$1');
         return `<span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> ${text}</span>`;
     });
-    // Replace block action-texts
     html = html.replace(/<p class="action-text[^"]*">(.*?)<\/p>/g, (match, p1) => {
-        let text = p1.trim();
-        text = text.replace(/^[\[\(](.*?)[\]\)]$/, '$1');
+        let text = p1.trim().replace(/^[\[\(](.*?)[\]\)]$/, '$1');
         return `<div class="stage-direction block-direction"><i class="fa-solid fa-masks-theater"></i> ${text}</div>`;
     });
     html = html.replace(/<p><span class="stage-direction block-direction">/g, '<div class="stage-direction block-direction">');
@@ -91,16 +81,12 @@ try {
     // 5. Names, Targets, and Audio
     html = html.replace(/<div class="char-name">(.*?)<\/div>/g, (match, name) => {
         name = name.trim();
-        
-        // Handle > or - for target directions
         if (name.includes(' &gt; ') || name.includes(' > ') || name.includes(' - ')) {
             const separator = name.includes(' &gt; ') ? ' &gt; ' : (name.includes(' > ') ? ' > ' : ' - ');
             let parts = name.split(separator);
             if (parts.length >= 2) {
                 let main = parts[0].trim();
                 let target = parts[1].trim();
-                
-                // Color mapping for target tags
                 let tagClass = 'tag';
                 let tLower = target.toLowerCase();
                 if (tLower.includes('pai')) tagClass = 'char-target-tag t-pai';
@@ -108,21 +94,15 @@ try {
                 if (tLower.includes('filha')) tagClass = 'char-target-tag t-filha';
                 else if (tLower.includes('filho')) tagClass = 'char-target-tag t-filho';
                 else if (tLower.includes('espírito') || tLower.includes('espirito') || tLower.includes('esprito')) tagClass = 'char-target-tag t-espirito';
-                
                 return `<div class="char-header"><div class="char-main">${main} <span class="${tagClass}"><i class="fa-solid fa-chevron-right"></i> ${target}</span></div></div>`;
             }
         }
-        
-        // Audio Player integration for Narrador
         if (name.includes('fa-microphone') || name.includes('NARRADOR')) {
-            // We use JS replacement below to add the correct MP3 to each occurrence
             return `<div class="char-header narrador-header"><div class="char-main"><i class="fa-solid fa-microphone"></i> NARRADOR</div><button class="audio-tag" AUDIO_PLACEHOLDER><i class="fa-solid fa-play"></i> OUVIR ÁUDIO</button></div>`;
         }
-        
         return `<div class="char-header"><div class="char-main">${name}</div></div>`;
     });
 
-    // Replace audio placeholders
     let audioCount = 0;
     html = html.replace(/AUDIO_PLACEHOLDER/g, (match) => {
         audioCount++;
@@ -130,7 +110,7 @@ try {
         return `onclick="toggleAudio('audios e trilhas/02-familia-final-narração.mp3', this)"`;
     });
 
-    // 6. Fix "Comentário" tags explicitly
+    // 6. Fix "Comentário" tags
     let comentCount = 0;
     html = html.replace(/<span class="tag">Coment.*?rio<\/span>/gi, (match) => {
         comentCount++;
@@ -142,18 +122,14 @@ try {
     });
 
     // 7. Extract Final Narration safely
-    // Remove existing scene-final if present
     html = html.replace(/<!-- PARTE FINAL -->[\s\S]*?<section class="scene-section expanded" id="scene-final"[\s\S]*?<\/section>/, '');
-    
     let lastNarracaoIndex = html.lastIndexOf('<div class="dialogue-card c-narracao">');
     if (lastNarracaoIndex !== -1 && !html.includes('id="scene-final"')) {
         let before = html.substring(0, lastNarracaoIndex);
         let after = html.substring(lastNarracaoIndex);
         let fimIndex = after.indexOf('<h2 class="fim-title">');
-        
         if (fimIndex !== -1) {
             let narrationContent = after.substring(0, fimIndex).trim();
-            
             let newAfter = `
             </div>
         </section>
@@ -181,16 +157,28 @@ try {
         }
     }
 
-    // 8. Fix Google Fonts weights
+    // 8. Fonts and Favicon
     html = html.replace(/<link href="https:\/\/fonts\.googleapis\.com\/css2\?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap"/g, '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"');
-
-    // Add favicon if missing
     if (!html.includes('favicon.svg')) {
         html = html.replace('<link rel="stylesheet" href="style.css">', '<link rel="icon" type="image/svg+xml" href="favicon.svg">\n    <link rel="stylesheet" href="style.css">');
     }
 
+    // 9. Add WhatsApp Meta Tags (Open Graph)
+    const ogTags = `
+    <meta property="og:title" content="O Inimigo no Meu Lar - Roteiro Teatral">
+    <meta property="og:description" content="Roteiro completo da peça teatral 'O Inimigo no Meu Lar'. Uma experiência digital interativa com divisão por atos.">
+    <meta property="og:image" content="https://alefyrezendesign.github.io/inimigo-do-meu-lar-teatro-ecd/simbol-encontro-horizontal-claro.png">
+    <meta property="og:url" content="https://alefyrezendesign.github.io/inimigo-do-meu-lar-teatro-ecd/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+`;
+    // Remove existing if present to prevent duplicates
+    html = html.replace(/<meta property="og:[\s\S]*?<meta name="twitter:card" content="summary_large_image">/g, '');
+    // Insert right before </head>
+    html = html.replace(/<\/head>/, ogTags + '\n</head>');
+
     fs.writeFileSync('index.html', html, 'utf8');
-    console.log("Ultimate rebuild complete. All HTML restored.");
+    console.log("Ultimate rebuild complete. Added OG Meta tags.");
 } catch (e) {
     console.error(e);
 }
