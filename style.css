@@ -329,6 +329,7 @@ table { width: 100%; border-collapse: collapse; min-width: 280px; }
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    align-items: start;
 }
 .char-item {
     background: #f8fafc;
