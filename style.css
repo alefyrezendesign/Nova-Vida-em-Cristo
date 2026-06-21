@@ -12,13 +12,18 @@
     --white: #FFFFFF;
     
     /* Character colors for borders and tags */
-    --c-inimigo: #1E293B; 
-    --c-espirito: #38bdf8;
-    --c-intercessora: #facc15;
-    --c-mae: #f472b6;
-    --c-pai: #60a5fa;
-    --c-filha: #c084fc;
-    --c-filho: #4ade80;
+    --c-rafa: #ec4899;
+    --c-carlos: #3b82f6;
+    --c-inimigo: #1e293b;
+    --c-manu: #10b981;
+    --c-lc: #ef4444;
+    --c-bia: #a855f7;
+    --c-religiao: #64748b;
+    --c-dono: #b91c1c;
+    --c-mulheres: #f43f5e;
+    --c-pai: #0ea5e9;
+    --c-recrutadora: #14b8a6;
+    --c-jesus: #eab308;
     --c-narrador: #475569;
 
     --header-height: 60px;
@@ -140,7 +145,7 @@ body {
     background: rgba(255, 255, 255, 0.1); color: white; padding: 16px 36px; border-radius: 100px;
     font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700;
     border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
 }
 .hero .btn-primary:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -160,7 +165,7 @@ main { max-width: var(--max-width); margin: 0 auto; padding-bottom: 80px; }
 
 /* Scene Sections & Accordions */
 .scene-section { margin-top: 0; padding: 0 16px; scroll-margin-top: calc(var(--header-height) + 20px); }
-.scene-header { text-align: left; cursor: pointer; user-select: none; transition: opacity 0.2s; margin-bottom: 10px; }
+.scene-header { text-align: left; cursor: pointer; -webkit-user-select: none; user-select: none; transition: opacity 0.2s; margin-bottom: 10px; }
 .scene-header:hover { opacity: 0.8; }
 .scene-title-wrapper { 
     display: flex; justify-content: space-between; align-items: center; 
@@ -253,22 +258,6 @@ main { max-width: var(--max-width); margin: 0 auto; padding-bottom: 80px; }
     padding: 2px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px;
     text-transform: uppercase;
 }
-.t-filha { background: #faf5ff; color: #9333ea; border: 1px solid #e9d5ff; }
-.t-pai { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
-.t-filho { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
-.t-espirito { background: #f8fafc; color: #000000; border: 1px solid #e2e8f0; }
-.t-mae { background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; }
-.t-intercessora { background: #fefce8; color: #ca8a04; border: 1px solid #fef08a; }
-.t-default { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
-
-/* In dark mode (.c-inimigo) */
-.c-inimigo .t-filha { background: rgba(147, 51, 234, 0.2); color: #d8b4fe; border-color: rgba(147, 51, 234, 0.4); }
-.c-inimigo .t-pai { background: rgba(37, 99, 235, 0.2); color: #93c5fd; border-color: rgba(37, 99, 235, 0.4); }
-.c-inimigo .t-filho { background: rgba(22, 163, 74, 0.2); color: #86efac; border-color: rgba(22, 163, 74, 0.4); }
-.c-inimigo .t-espirito { background: rgba(255, 255, 255, 0.15); color: #ffffff; border-color: rgba(255, 255, 255, 0.3); }
-.c-inimigo .t-mae { background: rgba(219, 39, 119, 0.2); color: #f9a8d4; border-color: rgba(219, 39, 119, 0.4); }
-.c-inimigo .t-intercessora { background: rgba(202, 138, 4, 0.2); color: #fde047; border-color: rgba(202, 138, 4, 0.4); }
-.c-inimigo .t-default { background: rgba(255, 255, 255, 0.1); color: #e2e8f0; border-color: rgba(255, 255, 255, 0.2); }
 
 /* Specific Characters */
 .c-inimigo { background: #1e293b; border-left: 4px solid #000; }
@@ -279,25 +268,39 @@ main { max-width: var(--max-width); margin: 0 auto; padding-bottom: 80px; }
 
 .c-narracao { border-left: 4px solid #000; border: 2px solid #e2e8f0; }
 .c-narracao .char-main { color: #000; }
-.audio-tag { background: #2563eb; color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.5px; }
 
-.c-mae { border-left-color: var(--c-mae); }
-.c-mae .stage-direction { background: #fdf2f8; border-color: #fbcfe8; color: #be185d; }
+.c-rafa { border-left-color: var(--c-rafa); }
+.c-rafa .stage-direction { background: #fdf2f8; border-color: #fbcfe8; color: #be185d; }
+
+.c-carlos { border-left-color: var(--c-carlos); }
+.c-carlos .stage-direction { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+
+.c-manu { border-left-color: var(--c-manu); }
+.c-manu .stage-direction { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
+
+.c-lc { border-left-color: var(--c-lc); }
+.c-lc .stage-direction { background: #fef2f2; border-color: #fecaca; color: #b91c1c; }
+
+.c-bia { border-left-color: var(--c-bia); }
+.c-bia .stage-direction { background: #faf5ff; border-color: #e9d5ff; color: #7e22ce; }
+
+.c-religiao { border-left-color: var(--c-religiao); }
+.c-religiao .stage-direction { background: #f8fafc; border-color: #e2e8f0; color: #475569; }
+
+.c-dono { border-left-color: var(--c-dono); }
+.c-dono .stage-direction { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+
+.c-mulheres { border-left-color: var(--c-mulheres); }
+.c-mulheres .stage-direction { background: #fff1f2; border-color: #fecdd3; color: #be123c; }
 
 .c-pai { border-left-color: var(--c-pai); }
-.c-pai .stage-direction { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+.c-pai .stage-direction { background: #f0f9ff; border-color: #bae6fd; color: #0369a1; }
 
-.c-filho { border-left-color: var(--c-filho); }
-.c-filho .stage-direction { background: #f0fdf4; border-color: #bbf7d0; color: #15803d; }
+.c-recrutadora { border-left-color: var(--c-recrutadora); }
+.c-recrutadora .stage-direction { background: #f0fdfa; border-color: #ccfbf1; color: #0f766e; }
 
-.c-filha { border-left-color: var(--c-filha); }
-.c-filha .stage-direction { background: #faf5ff; border-color: #e9d5ff; color: #7e22ce; }
-
-.c-intercessora { border-left-color: var(--c-intercessora); }
-.c-intercessora .stage-direction { background: #fefce8; border-color: #fef08a; color: #a16207; }
-
-.c-espirito { border-left-color: var(--c-espirito); }
-.c-espirito .stage-direction { background: #f0f9ff; border-color: #bae6fd; color: #0369a1; }
+.c-jesus { border-left-color: var(--c-jesus); }
+.c-jesus .stage-direction { background: #fefce8; border-color: #fef08a; color: #a16207; }
 
 /* Info Cards & Tables */
 .info-card { 
@@ -315,6 +318,26 @@ main { max-width: var(--max-width); margin: 0 auto; padding-bottom: 80px; }
     border: 1px solid #e2e8f0; background: #f8fafc;
 }
 table { width: 100%; border-collapse: collapse; min-width: 280px; }
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+.char-item {
+    background: #f8fafc;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: background 0.2s;
+}
+.char-item:hover {
+    background: #f1f5f9;
+}
 th, td { padding: 12px 14px; text-align: left; font-size: 0.85rem; line-height: 1.4; }
 th { 
     background: #f1f5f9; font-weight: 700; color: #475569; 
@@ -364,8 +387,8 @@ button.audio-tag.playing {
     width: 90%;
     max-width: 500px;
     background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 20px;
@@ -393,7 +416,7 @@ button.audio-tag.playing {
 .player-controls-top { display: flex; align-items: center; gap: 15px; }
 
 /* Fade Toggle */
-.fade-toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+.fade-toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; -webkit-user-select: none; user-select: none; }
 .fade-toggle input { display: none; }
 .fade-slider { width: 34px; height: 20px; background: #334155; border-radius: 20px; position: relative; transition: 0.3s; }
 .fade-slider::before { content: ''; position: absolute; width: 14px; height: 14px; border-radius: 50%; background: white; top: 3px; left: 3px; transition: 0.3s; }

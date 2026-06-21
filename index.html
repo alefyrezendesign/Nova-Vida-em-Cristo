@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Inimigo no Meu Lar - Roteiro</title>
+    <title>Nova Vida em Cristo - Roteiro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,16 +11,12 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 
-    
-
-
-    <meta property="og:title" content="O Inimigo no Meu Lar - Roteiro Teatral">
-    <meta property="og:description" content="Roteiro completo da peça teatral 'O Inimigo no Meu Lar'. Uma experiência digital interativa com divisão por atos.">
-    <meta property="og:image" content="https://alefyrezendesign.github.io/inimigo-do-meu-lar-teatro-ecd/simbol-encontro-horizontal-claro.png">
-    <meta property="og:url" content="https://alefyrezendesign.github.io/inimigo-do-meu-lar-teatro-ecd/">
+    <meta property="og:title" content="Nova Vida em Cristo - Roteiro Teatral">
+    <meta property="og:description" content="Roteiro completo da peça teatral 'Nova Vida em Cristo'.">
+    <meta property="og:image" content="https://alefyrezendesign.github.io/Nova-Vida-em-Cristo/simbol-encontro-horizontal-claro.png">
+    <meta property="og:url" content="https://alefyrezendesign.github.io/Nova-Vida-em-Cristo/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-
 </head>
 <body>
 
@@ -40,683 +36,1230 @@
     </div>
 </nav>
 
-<!-- Custom Audio Player UI -->
-<div class="custom-audio-player hidden" id="custom-audio-player">
-    <div class="player-header">
-        <span id="player-title">Trilha</span>
-        <button id="player-close" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+<!-- Drawer Menu -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
+<div class="drawer-menu" id="drawer-menu">
+    <div class="drawer-header">
+        <h3>Índice</h3>
+        <button id="close-menu-btn" onclick="toggleMenu()" title="Fechar menu" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <div class="player-controls">
-        <button id="player-play"><i class="fa-solid fa-play"></i></button>
-        <div class="player-timeline-container">
-            <input type="range" id="player-timeline" value="0" min="0" max="100" step="1">
-            <div class="player-time">
-                <span id="player-current-time">0:00</span>
-                <span id="player-total-time">0:00</span>
+    <ul class="drawer-list" id="drawer-list">
+        <!-- JS vai preencher -->
+    </ul>
+</div>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero" id="scene-0" data-title="Capa">
+        <div class="hero-content">
+            <img src="simbol-encontro-horizontal-claro.png" alt="Encontro com Deus" class="hero-logo">
+            <h1 class="hero-title">Nova Vida<br>em Cristo</h1>
+            <p class="hero-subtitle">Roteiro Completo</p>
+            <button class="btn-primary" onclick="startReading()">Iniciar Leitura <i class="fa-solid fa-arrow-down"></i></button>
+        </div>
+    </section>
+
+    <!-- Scene 1: Detalhes -->
+    <section class="scene-section expanded" id="scene-1" data-title="Detalhes da Peça">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Detalhes da Peça</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <div class="card info-card">
+                <h3><i class="fa-solid fa-users"></i> Personagens</h3>
+                <div class="characters-grid">
+                    <div class="char-item">Narrador / Voz Off</div>
+                    <div class="char-item">Rafa</div>
+                    <div class="char-item">Carlos</div>
+                    <div class="char-item">Inimigo</div>
+                    <div class="char-item">Manu</div>
+                    <div class="char-item">LC</div>
+                    <div class="char-item">Bia</div>
+                    <div class="char-item">Religião</div>
+                    <div class="char-item">Dono do Morro</div>
+                    <div class="char-item">Mulheres: Nathália e Mayara</div>
+                    <div class="char-item">Pai</div>
+                    <div class="char-item">Recrutadora</div>
+                    <div class="char-item">Jesus</div>
+                </div>
+            </div>
+            <div class="dialogue-card">
+                <p class="block-direction"><i class="fa-solid fa-masks-theater"></i> ORIENTAÇÃO DE PALCO:<br>Todos permanecem em cena durante praticamente toda a peça, ficando cada um ao lado do outro de costas para o público e se virando em suas cenas.<br>Quando a cena finalizar devem retornar a posição de costas.</p>
             </div>
         </div>
-    </div>
-    <div class="player-options">
-        <label><input type="checkbox" id="use-fade" checked> FADE IN/OUT (Transi��o Suave)</label>
-    </div>
-</div>
+    </section>
 
-<!-- Drawer Menu -->
-<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
-<div class="drawer-menu" id="drawer-menu">
-    <div class="drawer-header">
-        <h3>Índice</h3>
-        <button id="close-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <ul class="drawer-list" id="drawer-list">
-        <!-- JS vai preencher -->
-    </ul>
-</div>
-
-
-
-
-<!-- Drawer Menu -->
-<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
-<div class="drawer-menu" id="drawer-menu">
-    <div class="drawer-header">
-        <h3>Índice</h3>
-        <button id="close-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <ul class="drawer-list" id="drawer-list">
-        <!-- JS vai preencher -->
-    </ul>
-</div>
-
-
-
-
-<!-- Drawer Menu -->
-<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
-<div class="drawer-menu" id="drawer-menu">
-    <div class="drawer-header">
-        <h3>Índice</h3>
-        <button id="close-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <ul class="drawer-list" id="drawer-list">
-        <!-- JS vai preencher -->
-    </ul>
-</div>
-
-
-    <!-- Progress Header (Fixed) -->
-    
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="scene-0" data-title="Capa">
-            <div class="hero-content">
-                <img src="simbol-encontro-horizontal-claro.png" alt="Encontro com Deus" class="hero-logo">
-                <h1 class="hero-title">O Inimigo<br>no Meu Lar</h1>
-                <p class="hero-subtitle">Roteiro Completo</p>
-                <button class="btn-primary" onclick="startReading()">Iniciar Leitura <i class="fa-solid fa-arrow-down"></i></button>
+    <!-- Narração Inicial -->
+    <section class="scene-section expanded" id="scene-2" data-title="Narração Inicial">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Narração Inicial</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
             </div>
-        </section>
-
-        </section>
-
-        </section>
-
-        </section>
-
-        <!-- Scene 1: Detalhes -->
-        <section class="scene-section expanded" id="scene-1" data-title="Detalhes e Figurinos">
-            <div class="scene-header accordion-header" onclick="toggleScene(this)">
-  <div class="scene-title-wrapper">
-    <h2 class="scene-title">Detalhes da Peça</h2>
-    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-  </div>
-  <div class="scene-divider"></div>
-</div>
-            <div class="scene-content">
-                <div class="card info-card">
-                    <h3><i class="fa-solid fa-users"></i> 7 Participantes</h3>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead><tr><th>Papel</th><th>Nome</th></tr></thead>
-                            <tbody>
-                                <tr><td>Mãe</td><td>Luana</td></tr>
-                                <tr><td>Pai</td><td>Erique</td></tr>
-                                <tr><td>Filha</td><td>Cláudia</td></tr>
-                                <tr><td>Filho</td><td>Gilberto</td></tr>
-                                <tr><td>Inimigo (Diabo)</td><td>Alefy</td></tr>
-                                <tr><td>Espírito Santo</td><td>Aleson</td></tr>
-                                <tr><td>Intercessora</td><td>Fátima</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="card info-card">
-                    <h3><i class="fa-solid fa-shirt"></i> Figurinos</h3>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead><tr><th>Papel</th><th>Figurino</th></tr></thead>
-                            <tbody>
-                                <tr><td>Mãe</td><td>Roupa Preta de Mãe</td></tr>
-                                <tr><td>Pai</td><td>Roupa Preta de Pai</td></tr>
-                                <tr><td>Filha</td><td>Roupa Preta Estilosa</td></tr>
-                                <tr><td>Filho</td><td>Roupa Preta Estilosa</td></tr>
-                                <tr><td>Inimigo (Diabo)</td><td>Traje Preto Envelhecido Capa (mercado livre)</td></tr>
-                                <tr><td>Espírito Santo</td><td>Roupa Branca</td></tr>
-                                <tr><td>Intercessora</td><td>Bíblia e Roupa Estilosa clara</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <div class="dialogue-card c-narracao">
+                <div class="char-header narrador-header"><div class="char-main"><i class="fa-solid fa-microphone"></i> NARRADOR / VOZ OFF</div></div>
+                <p>Existem pesos que ninguém vê. Gente sorrindo com o coração em pedaços.<br>
+                Gente falando de liberdade, mas presa aos próprios desejos.<br>
+                Gente ganhando o mundo e perdendo a própria alma.<br>
+                Gente tentando preencher o coração com prazeres, enquanto fica cada vez mais vazia.</p>
+                <span class="stage-direction">[Pausa.]</span>
+                <p>Porque nem toda prisão tem grades.<br>
+                Nem toda corrente pode ser vista.<br>
+                Nem todo filho pródigo aparenta estar perdido.<br>
+                E nem todo perdido deixou de acreditar.</p>
+                <span class="stage-direction">[Pausa longa.]</span>
+                <p>Às vezes, o inimigo não começa atacando.<br>
+                Ele começa oferecendo uma saída.<br>
+                Um alívio. Uma desculpa. Uma solução rápida.<br>
+                E, de escolha em escolha, o vazio aumenta.<br>
+                De desculpa em desculpa, o coração endurece.<br>
+                De fuga em fuga, a alma se afasta do Criador.</p>
+                <span class="stage-direction">[Pausa longa.]</span>
+                <p>Mas ainda existe uma voz que chama.<br>
+                Uma voz que confronta, mas também consola.<br>
+                Uma voz que parece distante, embora esteja mais perto do que imaginamos.<br>
+                É a voz do Espírito Santo.<br>
+                Ela não oferece mais uma fuga.<br>
+                Ela oferece...</p>
+                <span class="stage-direction">[Com ênfase.]</span>
+                <p><strong>UMA NOVA VIDA EM CRISTO.</strong></p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Narração Inicial -->
-        <section class="scene-section expanded" id="scene-2" data-title="Narração Inicial">
-            <div class="scene-header accordion-header" onclick="toggleScene(this)">
-  <div class="scene-title-wrapper">
-    <h2 class="scene-title">Narração Inicial</h2>
-    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-  </div>
-  <div class="scene-divider"></div>
-</div>
-            <div class="scene-content">
-                <div class="dialogue-card c-narracao">
-                    <div class="char-header narrador-header"><div class="char-main"><i class="fa-solid fa-microphone"></i> NARRADOR</div><button class="audio-tag" onclick="toggleAudio('audios e trilhas/01-familia-intro-narração.mp3', this)"><i class="fa-solid fa-play"></i> OUVIR ÁUDIO</button></div>
-                    <p>A família não foi ideia do homem.</p>
-                    <p><strong>A FAMÍLIA É UM PROJETO DE DEUS.</strong></p>
-                    <p>Ela nasceu no coração de Deus como um lugar de amor, proteção, honra, perdão e presença de Deus.</p>
-                    <p>Uma casa não é feita apenas de paredes.<br>Uma casa é feita de aliança e unidade.</p>
-                    <p>Deus tem planos para você e sua família.<br>Planos de paz e restauração.</p>
-                    <p>Ele quer que você e sua casa sejam cartas vivas do poder de Cristo!</p>
-                    <p>Ele quer ativar chamados, dons e talentos.<br>Ele pode e Ele quer mudar o destino do seu lar!</p>
-                </div>
+    <!-- TAKE 1 - RAFA -->
+    <section class="scene-section expanded" id="scene-3" data-title="Take 1 — Rafa">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 1 — Rafa</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
             </div>
-        </section>
-
-        <!-- PARTE 1 -->
-        <section class="scene-section expanded" id="scene-3" data-title="Parte 1 - Apresentação">
-            <div class="scene-header accordion-header" onclick="toggleScene(this)">
-  <div class="scene-title-wrapper">
-    <h2 class="scene-title">Parte 1 - Apresentação</h2>
-    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-  </div>
-  <div class="scene-divider"></div>
-</div>
-            <div class="scene-content">
-                <div class="music-cue"><i class="fa-solid fa-music"></i> [Trilha Sonora - Música ….]</div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO</div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Entrar com tom sarcástico e frio</span>
-                    <p>Que lindo, não? O projeto de Deus…<br>lugar de amor? Honra? Perdão?</p>
-                    <p>Que inocência. Isso são apenas palavras bonitas.</p>
-                    <p>Sabe o que eu vejo aqui?</p>
-                    <p>Não passam de pessoas que moram debaixo do mesmo teto.<br>E, bem lá no fundo, nem se conhecem.</p>
-                    <p>Vivem em mundos diferentes.<br>Completamente distantes daquilo que Deus planejou.</p>
-                    <p>Querem ver na prática como eu destruo famílias?</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Entra a família como fantoches de cabeça baixa</span>
-                    <p>Apresento a vocês uma típica família brasileira.<br>Vou deixá-los se apresentar.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O INIMIGO toca no ombro da MÃE</span>
-                </div>
-
-                <div class="dialogue-card c-mae">
-                    <div class="char-header"><div class="char-main">MÃE</div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> 'desperta” cansada e irritada, limpando coisas imaginárias</span>
-                    <p>Todo dia a mesma coisa…</p>
-                    <p>Eu passo o dia inteiro trabalhando, chego da igreja cansada, e a casa está um lixo!</p>
-                    <p>Ninguém ajuda em nada nesta casa.<br>Tenho que dar conta de tudo sozinha.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Pausa, refletindo, triste</span>
-                    <p>Meus filhos só me procuram quando precisam de alguma coisa.<br>Nunca mais disseram que me amam.<br>Eu não sei mais conversar com eles.</p>
-                    <p>Meu marido mal olha na minha cara.<br>Eu vivo exausta… e ninguém percebe.<br>Nem em casa, nem na igreja.</p>
-                    <p>Por fora, eu digo que está tudo bem.<br>Por dentro, eu estou desmoronando.</p>
-                    <p>Às vezes, eu acho que nem Deus me vê mais.</p>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-mae">COMENTÁRIO: MÃE</span></div></div>
-                    <p>Ah, mãezinha. Tão cansada.<br>Tão sobrecarregada.</p>
-                    <p>Vive na igreja, canta, ora, serve, até aconselha os outros…<br>Sabe levantar a mão na hora certa.<br>Sabe dizer “glória a Deus” com a entonação “espiritual”</p>
-                    <p>Mas por dentro… Risos<br>No próprio lar já não consegue nem sequer amar.</p>
-                    <p>Como eu amo a religiosidade fingida.<br>Orações que não aproximam de Deus.<br>A fé que não transforma o caráter.<br>Sentimentos mal resolvidos.</p>
-                    <p>Eu não precisei tirar Deus da sua boca.<br>Só do secreto.</p>
-                    <p>E sem ela perceber estava apenas servindo no altar…<br>Mas longe de ser um.</p>
-                </div>
-
-                <div class="dialogue-card c-pai">
-                    <div class="char-header"><div class="char-main">PAI</div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Irritado, distante.</span>
-                    <p>Eu passo o dia no trabalho resolvendo problemas.<br>Chego em casa e só tenho mais problemas;<br>Dívidas, cobranças, filhos e essa mulher;</p>
-                    <p>Se falta alguma coisa, a culpa é minha.<br>Se os filhos estão assim, a culpa é minha.<br>Se essa casa está um caos, a culpa é minha.</p>
-                    <p>Essa menina vive trancada no quarto com o celular…<br>não conversa, não sai, não olha na minha cara.</p>
-                    <p>Esse moleque não faz nada da vida.<br>Vive na rua com amizades erradas.<br>Só Deus sabe o que ele anda aprontando.</p>
-                    <p>Minha mulher vive na igreja, mas em casa vira outra pessoa.</p>
-                    <p>Não tenho paz dentro do meu próprio lar.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> tentando parecer forte, mas claramente quebrado por dentro.</span>
-                    <p>Esse lugar só serve para me lembrar que sou um fracasso.</p>
-                    <p>Um fracasso como marido.<br>Um fracasso como pai.<br>Um fracasso como homem.</p>
-                    <p>Então eu saio. Eu bebo. Porque, por algumas horas, eu esqueço tudo.<br>No começo, era só para esfriar a cabeça.<br>Depois, virou fuga.</p>
-                    <p>Eu sei que estou distante. Eu sei que estou ausente.<br>Mas ninguém entende o peso que eu carrego.</p>
-                    <p>E, sinceramente?</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Olha para a família.</span>
-                    <p>Não dá nem vontade de voltar para essa casa.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O INIMIGO toca nele. Ele desaba. Depois, toca no FILHO.</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-pai">COMENTÁRIO: PAI</span></div></div>
-                    <p>O provedor ausente.<br>Acha que família é só pagar boleto.<br>Colocar comida dentro de casa já é ser pai.<br>Tem que ser forte o tempo todo.<br>O Silêncio e a distância é a solução.</p>
-                    <p>Eu usei o peso que ele carrega.<br>Junto a vergonha de se sentir fracassado.</p>
-                    <p>Depois, ofereci escapes…<br>Primeiro ofereci o álcool<br>Depois ofereci mulheres… (infelizmente ele não caiu)<br>Então fui mais discreto e ofereci algumas imagens e vídeos de madrugada, escondido, no banheiro.</p>
-                    <p>Porque homem culpado, quando não se arrepende, fica agressivo.<br>E eu entendo muito bem disso.</p>
-                    <p>A culpa dele virou frieza.<br>A frieza virou distância.<br>A distância virou abandono.</p>
-                    <p>E ele ainda chama isso apenas de cansaço. kkkk</p>
-                </div>
-
-                <div class="dialogue-card c-filho">
-                    <div class="char-header"><div class="char-main">FILHO</div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Rebelde, magoado.</span>
-                    <p>Meus pais não entendem nada.<br>Vivem no passado, e me tratam como criança…<br>Como se eu vivesse na época deles.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Tom de arrogância e “dono da verdade”.</span>
-                    <p>Meu pai só sabe me criticar, mas não me ajuda em nada.<br>Não consegue conversar comigo sem me acusar.<br>Vive falando de arrumar emprego, mas nunca me apoiou nos meus sonhos.</p>
-                    <p>Minha mãe só fala de Deus, mas em casa não demonstra nem um pouco.<br>Para ela, tudo é pecado. Não posso nada.</p>
-                    <p>Eles vivem brigando, se ignoram… e ainda querem me dar lição de moral?</p>
-                    <p>Lá fora, pelo menos, tem gente que me escuta.<br>Tem gente que não me julga.<br>Quando eu fumo na roda, a minha mente se abre e eu tenho paz.</p>
-                    <p>E deixa eu falar…Eu já fui crente quando era criança<br>Mas relgiãozinha de vocês é uma prisão!<br>O Deus de vocês não tem amor!</p>
-                    <p>Amor pra mim é ser livre para fazer o que eu quiser, com quem eu quiser e como eu quiser.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O INIMIGO toca nele. Ele desaba. Depois, vira pra filha e pausa um pouco</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-filho">COMENTÁRIO: FILHO</span></div></div>
-                    <p>Ah, como eu amo os jovens modernos.<br>Tão cheios de opinião. Tão cheios de discursos.<br>Tão inteligentes, mas tão fáceis de enganar.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Pausa</span>
-                    <p>Quanta dor disfarçada de revolta.</p>
-                    <p>Eu entrei nessa dor, mechi nas crenças…<br>Como ele cresce na igreja mas nunca conheceu a Jesus foi fácil</p>
-                    <p>Eu cheguei com aceitação.</p>
-                    <p>Troquei a Bíblia por ideologias modernas.<br>Troquei obediência por revolta.<br>Troquei identidade por confusão de gênero.<br>Troquei propósito por prazeres.</p>
-                    <p>Dei a ele a sensação de “liberdade”…<br>Ele acredita que está se encontrando<br>Enquanto isso eu prendo ele nas minhas correntes</p>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-filha"><i class="fa-solid fa-chevron-right"></i> FILHA</span></div></div>
-                    <p>Ah… ela.<br>Essa aí nem eu suporto.<br>Coisinha frágil, chata, melancólica, dramática…</p>
-                    <p>Sempre querendo atenção.<br>Mas sabe o que é pior?<br>Ninguém percebe ela mesmo kk</p>
-                    <p>Vai. Fala rápido nojenta.</p>
-                </div>
-
-                <div class="dialogue-card c-filha">
-                    <div class="char-header"><div class="char-main">FILHA</div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Voz baixa, profunda dor e olhar perdido.</span>
-                    <p>Oi, gente? <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Tentando acordar a família.</span><br>Eu estou aqui…Por que ninguém olha para mim?</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Vira para a plateia.</span>
-                    <p>Viram? Ninguém me vê.<br>Eu me sinto invisível dentro da minha própria casa.</p>
-                    <p>Meu irmão era meu melhor amigo…<br>Agora não pára em casa, nem fala comigo.</p>
-                    <p>Ele deve me odiar.</p>
-                    <p>Minha mãe fala de Deus, nunca tem tempo para me ouvir.<br>Fala de culto, fala de oração, de pecado, de revelação, de demônio…<br>Mas não percebe a própria filha.</p>
-                    <p>Meu pai entra e sai dessa casa como se aqui fosse só um lugar para dormir.</p>
-                    <p>Quando ele olha para mim, eu percebo na hora o olhar de decepção…<br>Parece que só vê problema e despesas.</p>
-                    <p>Então, eu aprendi a ficar quieta.<br>Quando perguntam se estou bem, eu digo que sim.</p>
-                    <p>Porque, quando eu falava, diziam que era drama.<br>Quando eu chorava, diziam que era fase. <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> pausa triste</span></p>
-                    <p><strong>Eu vejo as outras famílias no Instagram…</strong><br>Todo mundo feliz, só a minha é destruída.</p>
-                    <p>Sempre que eu deito na cama, começo a pensar em tudo que tem de errado comigo.<br>Meu rosto, meu corpo, meu jeito… tudo.</p>
-                    <p>Depois que meu namoro acabou, parece que arrancaram o pouco valor que eu achava que tinha.<br>Ele era a única pessoa que parecia me querer por perto.</p>
-                    <p>Depois de tanto problema eu tranquei a faculdade porque não consigo mais fingir que ainda tenho futuro.</p>
-                    <p>Eu não tenho força para estudar.<br>Não tenho ânimo para trabalhar.<br>Não tenho vontade de sair do quarto.</p>
-                    <p>E ainda tenho que ouvir minha mãe falar de Deus.</p>
-                    <p>O Deus dela cura.<br>O Deus dela ama.<br>O Deus dela vê.</p>
-                    <p>Então por que ele não me viu?<br>Por que ele deixou eu ficar assim?</p>
-                    <p>Às vezes, eu penso que seria melhor se eu não existisse…</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Desaba. Silêncio pesado.</span><br>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O INIMIGO toca nela</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-filha">COMENTÁRIO: FILHA</span></div></div>
-                    <p><strong>A dor silenciosa…</strong><br>Ninguém percebe até que seja tarde demais.</p>
-                    <p><u>Sabe: Vocês me julgam como “coisa ruim”.<br>Mas eu sou o único que escuta essa coitadinha.</u></p>
-                    <p>Eu sou o único que fica quando ela fecha a porta.<br>Eu sou o único que escuta quando ela chora baixo.</p>
-                    <p>Vocês mandam ela orar. Eu faço ela se isolar.</p>
-                    <p>Vocês dizem que é exagero.<br>Eu digo: “Você tem razão.”</p>
-                    <p>Vocês gritam, e eu sussurro bem baixinho. <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> sussurro e pausa impactante</span><br>Tudo aquilo que ela tem medo.</p>
-                    <p>E ela acredita em mim porque, diferente de vocês, eu estou lá, ouvindo todo o desabafo bem atento. Palavra por palavra, noite após noite…</p>
-                    <p>Não para ajudar; mas para usar contra ela.</p>
-                    <p>Enquanto ela me dá espaço eu vou costurando cada palavra no coração dela.</p>
-                </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu sei o que pensam quando olham pra mim.<br>
+                “Desviada.” “Se perdeu.” “Está no mundo.” É sempre assim, né?</p>
+                <span class="stage-direction">[Ri com ironia.]</span>
+                <p>Mas eu não estou desviada. Eu só não quero mais fazer parte de nada que envolva igreja.<br>
+                Eu acredito em Deus. Acredito que Jesus viveu e ensinou sobre amor.<br>
+                Mas esse Jesus da igreja parece estar o tempo todo cobrando perfeição e apontando pecado.</p>
+                <span class="stage-direction">[O Inimigo se aproxima.]</span>
             </div>
-        </section>
-
-        <!-- PARTE 2 -->
-        <section class="scene-section expanded" id="scene-4" data-title="Parte 2 - Como O Inimigo Age">
-            <div class="scene-header accordion-header" onclick="toggleScene(this)">
-  <div class="scene-title-wrapper">
-    <h2 class="scene-title">Parte 2 - Como o Inimigo Age</h2>
-    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-  </div>
-  <div class="scene-divider"></div>
-</div>
-            <div class="scene-content">
-                <div class="music-cue"><i class="fa-solid fa-music"></i> [Trilha Sonora - Música ….]</div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO</div></div>
-                    <p>E aí vocês gostaram?</p>
-                    <p>Vocês viram? Uma família comum.<br>Quantos lares vivem isso no cotidiano?</p>
-                    <p>Pais desatentos aos sofrimentos dos próprios filhos.<br>Filhos orgulhosos que se acham donos da razão.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Sorriso</span>
-                    <p>Não precisei fazer nada demais.<br>Não precisei arrombar a porta.<br>Eu só bati nela…</p>
-                    <p><strong>Eu aprendi uma coisa:</strong><br>Só preciso afastar os pilares da presença de Deus. <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> aponta pro pai e mãe</span><br>E nos detalhes, eles vão se perdendo.</p>
-                    <p><strong>Eu não crio nada.</strong><br><strong>Uso o que cada um já carrega e apenas alimento.</strong></p>
-                    <p>feridas, orgulho, traumas, segredos, egoísmo, rejeição, cansaço, comparação, carência, culpa, medo, vícios, silêncio, mágoas antigas, frustrações, palavras não ditas, palavras malditas, vaidade, inveja, ansiedade, solidão, vergonha, religiosidade vazia e falta de amor.</p>
-                    <p><strong>Quando a oração e o diálogo acabam…</strong><br><strong>Eu me sento à mesa com eles.</strong></p>
-                </div>
-
-                <div class="dialogue-card c-intercessora">
-                    <div class="char-header"><div class="char-main">INTERCESSORA</div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Ergue as mãos em oração bem baixinho</span><br>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Pausa - O inimigo sente o cheiro e se incomoda, fica mais irritado</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="tag">Mais irritado</span></div></div>
-                    <p>Vocês acham que seus “pecadinhos” não afetam ninguém?<br>Que esse silêncio e distância dentro de casa é normal?<br>Eu já estou dentro da sua casa há muito tempo.</p>
-                    <p>E aquela Bíblia aberta em Salmos… kkk<br>Acham mesmo que isso me impede?</p>
-                    <p>Ir à igreja no domingo?<br>Subir o monte?</p>
-                    <p>Entendam uma coisa: eu não me submeto a vocês.<br>Apenas ao Filho do Homem, o Cristo.</p>
-                    <p>Mas muitos aqui não carregam nem sequer resquícios do cheiro da presença dEle.<br>Sua religiosidade vazia não vale de nada.</p>
-                    <p>Sua fé sem obras é completamente infundada. Kkk.<br>Até eu conheço mais Aquele que vocês chamam de Senhor!</p>
-                    <p>Amado…<br>Rei…<br>Deus…<br>Salvador…</p>
-                    <p>Hipócritas…<br>Vazios…</p>
-                </div>
-
-                <div class="dialogue-card c-intercessora">
-                    <div class="char-header"><div class="char-main">INTERCESSORA</div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> A Intercessora se levanta. A oração deve ganhar volume mas ainda não é alto com autoridade ainda</span><br>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Incomodado, novamente o inimigo tenta chegar a intercessora, mas não consegue passar pelo Espírito Santo. Ele se direciona a família bem irritado</span>
-                </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Você saiu porque queria ser livre.</p>
             </div>
-        </section>
-
-        <!-- PARTE 3 -->
-        <section class="scene-section expanded" id="scene-5" data-title="Parte 3 - Ataque">
-            <div class="scene-header accordion-header" onclick="toggleScene(this)">
-  <div class="scene-title-wrapper">
-    <h2 class="scene-title">Parte 3 - Ataque</h2>
-    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-  </div>
-  <div class="scene-divider"></div>
-</div>
-            <div class="scene-content">
-                <div class="music-cue"><i class="fa-solid fa-music"></i> [Trilha Sonora - Música ….]</div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO</div></div>
-                    <p>Chega de teatrinho! Vamos acabar logo com isso!<br>Olha como eu destruo essa casa <strong>como e quando eu quiser.</strong></p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Inimigo APRESSADO começa a puxar cada um para uma atitude extrema</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-filha"><i class="fa-solid fa-chevron-right"></i> FILHA</span></div></div>
-                    <p>Fica no quarto.<br>Fecha a porta e se mata!.<br>Não adianta falar com ninguém.</p>
-                    <p>Você sabe que não tem saída.<br>Sua vida nunca vai mudar!<br>Tá na hora de você acabar com isso!</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> A FILHA se ajoelha ou senta no chão > Inimigo entrega uma faca > FILHA fica em CRISE chorando e negando, resistindo</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-filho"><i class="fa-solid fa-chevron-right"></i> FILHO</span></div></div>
-                    <p>Esse lugar não é pra você!<br>Essa casa é uma prisão!<br>Ninguém nunca vai te entender;<br>Na rua você é alguém.<br>Vai embora.<br>Se afunda de uma vez nas drogas.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> FILHO fica irritado pega a mochila e saí de casa</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-pai"><i class="fa-solid fa-chevron-right"></i> PAI</span></div></div>
-                    <p>Olha para essa casa, essa mulher, esses filhos.<br>Tudo saiu do seu controle.<br>E essa vagabunda ainda quer colocar a culpa em você!<br>Ela é a culpada!<br>Chegou a hora de dar um basta.<br>Mostra quem manda.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> INIMIGO levanta a camisa dele mostrando a arma na cintura</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-mae"><i class="fa-solid fa-chevron-right"></i> MÃE</span></div></div>
-                    <p>Fofoqueira, maldita, você é joio na igreja.<br>Você jamais será usada como deseja.<br>Seu ministério está morto.<br>Sua casa é um desastre.<br>Seus filhos são meus.<br>Seu marido está com outra na rua!<br>Ele não te ama!<br>Você sempre carregou tudo sozinha.<br>Ele é o culpado!<br>Reage.<br>Humilha ele.</p>
-                    <p><strong>O INIMIGO COLOCA UM DE FRENTE PRO OUTRO E TOCA NA MENTE DELES E ELES COMEÇAM A DISCUTIR. O PONTO FINAL DA DISCUSSÃO É <span class="text-danger">ELA DÁ UM TAPA NA CARA DELE E ELE PUXA A ARMA.</span></strong></p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i>  A CENA PAUSA / CONGELA</span>
-                </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Pois é.</p>
+                <span class="stage-direction">[Concorda.]</span>
+                <p>Jesus veio pra me fazer livre, não escrava da culpa e da religião.<br>
+                Então eu saí. Abandonei o sistema “igreja”.<br>
+                Isso é liberdade.</p>
             </div>
-        </section>
-
-        <!-- PARTE 4 -->
-        <section class="scene-section expanded" id="scene-6" data-title="Parte 4 - Ação do Espírito">
-            <div class="scene-header accordion-header" onclick="toggleScene(this)">
-  <div class="scene-title-wrapper">
-    <h2 class="scene-title">Parte 4 - Ação do Espírito</h2>
-    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-  </div>
-  <div class="scene-divider"></div>
-</div>
-            <div class="scene-content">
-                <div class="music-cue"><i class="fa-solid fa-music"></i> [Trilha Sonora - Música ….]</div>
-                
-                <div class="action-text block-action">
-                    [A Intercessora levanta a voz > a oração ganha volume > a fala precisa passar autoridade, mas sem gritaria descontrolada]
-                </div>
-
-                <div class="dialogue-card c-intercessora">
-                    <div class="char-header"><div class="char-main">INTERCESSORA</div></div>
-                    <p class="text-example">EXEMPLO:</p>
-                    <p>Senhor, eu clamo por essa casa.<br>Eu clamo por essa família.<br>O que o inimigo tentou destruir, o Senhor ainda pode restaurar.<br>Eu oro pela mãe cansada.<br>Pelo pai distante.<br>Pelo filho perdido.<br>Pela filha ferida.</p>
-                    <p>Eu oro contra toda mentira, toda divisão, todo vício, toda imoralidade, toda rejeição, toda violência, toda ausência e toda falta de perdão.</p>
-                    <p>Essa casa não pertence ao inimigo. Essa família nasceu no Teu coração.<br>E aquilo que nasceu no Teu coração não será destruído sem que haja clamor na terra.</p>
-                    <p>Visite essa casa meu PAI!</p>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO</div></div>
-                    <p>Não. Oração de novo, não.<br>Eu vou te matar mulher porque está se metendo nisso?</p>
-                </div>
-
-                <div class="dialogue-card c-intercessora">
-                    <div class="char-header"><div class="char-main">INTERCESSORA</div></div>
-                    <p>Eu te repreendo Satanás em nome de Jesus.<br>Essa casa não é sua, essa família pertence ao Senhor!</p>
-                    <p class="action-list">
-                        <span><strong>1</strong> [A Intercessora permanece em oração um pouco mais baixo]</span><br>
-                        <span><strong>2</strong> [O Espírito Santo avança primeiro em direção à Mãe.]</span><br>
-                        <span class="text-danger"><strong>3</strong> [O Inimigo tenta avançar nos pais, mas recua diante do Espírito Santo - Ele sai e vai pro filho e fica sussurrando e oprimindo ele]</span>
-                    </p>
-                </div>
-
-                <div class="dialogue-card c-espirito">
-                    <div class="char-header"><div class="char-main">ESPÍRITO SANTO <span class="char-target-tag t-mae"><i class="fa-solid fa-chevron-right"></i> MÃE</span></div></div>
-                    <p>Filha, volte para Mim.<br>Antes de restaurar sua casa.<br>Eu preciso restaurar o seu coração.</p>
-                    <p>Antes de reconstruir sua família, eu quero reconstruir o altar que se apagou dentro de você.</p>
-                    <p>Volte para mim.</p>
-                    <p>Não como serva cansada e sobrecarregada..<br>Não como alguém tentando provar seu valor.</p>
-                    <p>Escolha a melhor parte!<br>Escolha apenas estar comigo!<br>Volte como filha.</p>
-                </div>
-
-                <div class="dialogue-card c-mae">
-                    <div class="char-header"><div class="char-main">MÃE <span class="char-target-tag t-espirito"><i class="fa-solid fa-chevron-right"></i> ESPÍRITO SANTO</span></div></div>
-                    <p>Senhor…Eu me perdi. Me afastei da Tua presença.<br>Eu servi sem amor. Eu corrigi sem escutar.<br>Eu cuidei da casa, mas esqueci do lar.<br>Eu desejei o altar; e não ser o altar.<br>Deixei minha própria família sangrando</p>
-                    <p>Eu queria que minha família te encontrasse…<br>mas eles não estavam Te vendo em mim.</p>
-                    <p>Me perdoa. Restaura primeiro a mim.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> A Mãe cai de joelhos</span>
-                </div>
-
-                <div class="dialogue-card c-espirito">
-                    <div class="char-header"><div class="char-main">ESPÍRITO SANTO <span class="char-target-tag t-pai"><i class="fa-solid fa-chevron-right"></i> PAI</span></div></div>
-                    <p>Filho… Eu sou o Deus da sua esposa!<br>Eu vi o homem escondido atrás de toda essa raiva.</p>
-                    <p>Você passou a vida tentando parecer forte em meio a dor.<br>Mas usa essa dor para justificar ausência e dureza.<br>Chega de fugir</p>
-                    <p>Ser cabeça não é dominar.<br>É proteger, cuidar e amar.</p>
-                    <p>Hoje, você precisa se render.<br>Arrependa–se!<br>Eu quero te ensinar a ser um novo homem!</p>
-                </div>
-
-                <div class="dialogue-card c-pai">
-                    <div class="char-header"><div class="char-main">PAI <span class="char-target-tag t-espirito"><i class="fa-solid fa-chevron-right"></i> ESPÍRITO SANTO</span></div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Resistente, mas quebrando aos poucos.</span>
-                    <p>Eu não sei fazer isso. Eu não sei o que falar.<br>Mas eu reconheço que estava aqui… sem estar.</p>
-                    <p>Eu fugia porque não sabia lidar.<br>E isso só piorou tudo!<br>Eu gritava porque não sabia pedir perdão.<br>Mas eu não quero mais ser assim!</p>
-                    <p>Deus Eu preciso de Ti.<br>Eu não consigo restaurar minha casa com minhas próprias forças!</p>
-                    <p>Me perdoa. Me ensina a ser um novo homem!</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Pai se ajoelha ao lado da Mãe.</span><br>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Espírito dá as mãos de um ao outro</span>
-                </div>
-
-                <div class="dialogue-card c-narracao">
-                    <div class="char-header"><div class="char-main">MÃE E PAI</div></div>
-                    <ul class="bullet-list">
-                        <li><strong>1</strong> Pedem perdão um ao outro…</li>
-                        <li><strong>2 Mãe:</strong> Nós precisamos orar pela nossa casa.</li>
-                        <li><strong>3 Pai:</strong> Eu não sei orar… mas sim, nós precisamos</li>
-                        <li><strong>4 Mãe começa a orar:</strong> Nosso lar pertence a Ti Senhor….. ele também começa a orar…</li>
-                        <li class="text-secondary-muted">(começa no volume médio e depois fica mais baixo)</li>
-                    </ul>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-filho"><i class="fa-solid fa-chevron-right"></i> FILHO</span></div></div>
-                    <p>Essa casa não é pra você eu tenho o que você precisa.<br>Seus pais te odeiam.<br>Até morar na rua é melhor que sua casa.</p>
-                    <div class="stage-direction block-direction"><i class="fa-solid fa-masks-theater"></i> O Espírito Santo se levanta e vai em direção ao Filho, que está afastado, ainda com a mochila</div>
-                    <div class="stage-direction block-direction"><i class="fa-solid fa-masks-theater"></i> O diabo se afasta aos poucos e vai pra filha e oprime ela</div>
-                </div>
-
-                <div class="dialogue-card c-espirito">
-                    <div class="char-header"><div class="char-main">ESPÍRITO SANTO <span class="char-target-tag t-filho"><i class="fa-solid fa-chevron-right"></i> FILHO</span></div></div>
-                    <p>Filho…Eu sou Deus e Tenho olhado para você!<br>Você não precisa fugir.</p>
-                    <p>Eu sei que você está cansado.<br>Cresceu ouvindo sobre mim, mas nem sempre me viu.<br>Confundiu religião vazia com quem Eu Sou.</p>
-                    <p>Eu não sou a acusação que te feriu.<br>Eu não sou o peso que colocaram sobre você.<br>Eu Sou Jesus.</p>
-                    <p>Aquele que viu sua dor e decidiu carregar e pregá-la sobre a cruz.<br>Abra seus olhos e veja as correntes que estão te prendendo.</p>
-                    <p>Você não nasceu fugir da realidade.<br>Você nasceu com propósito de impactar essa geração!</p>
-                    <p>Você é filho.</p>
-                </div>
-
-                <div class="dialogue-card c-filho">
-                    <div class="char-header"><div class="char-main">FILHO <span class="char-target-tag t-espirito"><i class="fa-solid fa-chevron-right"></i> ESPÍRITO SANTO</span></div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Ainda duro, mas com a voz começando a falhar.</span>
-                    <p>Como assim? Que voz é essa?<br>Voltar para quê?<br>Para ser julgado de novo?<br>Com certeza vão me receber com crítica dizendo tudo que faço de errado!</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> pausa</span>
-                    <p>Na real, eu não quero ir embora assim;<br>Mas eu senti uma raiva dos meus pais do nada que não sei explicar.<br>Ainda tenho raiva.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> pausa</span>
-                    <p>Tem muita coisa que não entendo<br>No fundo eu sei que meu lugar não é aqui fora</p>
-                    <p>Se o Senhor é Jesus de verdade…<br>Então me ajuda a voltar.<br>Porque sozinho eu não consigo.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Espírito tira a mochila dele e o abraça e o leva até seus pais</span>
-                </div>
-
-                <div class="dialogue-card c-espirito">
-                    <div class="char-header"><div class="char-main">ESPÍRITO SANTO <span class="char-target-tag t-filho"><i class="fa-solid fa-chevron-right"></i> FILHO</span></div></div>
-                    <p>Seus pais te amam!<br>Ainda há lugar para você nesta casa.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Filho chega cai de joelhos e abraça os pais. A Mãe eo Pai choram o abraçando e ficam simulando que estão dialogando felizes e começam a orar baixinho pela filha</span>
-                </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Você é livre.</p>
             </div>
-        </section>
-
-        <!-- PARTE 5 -->
-        <section class="scene-section expanded" id="scene-7" data-title="Parte 5 - Último Ataque">
-            <div class="scene-header accordion-header" onclick="toggleScene(this)">
-  <div class="scene-title-wrapper">
-    <h2 class="scene-title">Parte 5 - Último Ataque</h2>
-    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-  </div>
-  <div class="scene-divider"></div>
-</div>
-            <div class="scene-content">
-                <div class="action-text block-action">
-                    [A Filha já está no chão sem forças com a faca em mãos sendo oprimida pelo INIMIGO]<br>
-                    [Seu semblante muda um pouco e ela fica sentindo que algo diferente entrou na sua casa - O ESPÍRITO]
-                </div>
-
-                <div class="dialogue-card c-filha">
-                    <div class="char-header"><div class="char-main">FILHA</div></div>
-                    <p>Parece que meus pais estão chorando na sala?<br>Que sensação estranha.<br>Estou sentindo algo diferente.<br>Não dá pra explicar mas é algo bom.</p>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO — FILHA</div></div>
-                    <p>Agora é tarde pra você, não adianta mais.<br>Você não tem saída.<br>Acaba com isso. Se mata.<br>Ouve só eles estão tristes e decepcionados com você.<br>Você é minha.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Espírito Santo entra no quarto</span><br>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Inimigo tenta continuar falando, mas começa a perder força</span>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-espirito"><i class="fa-solid fa-chevron-right"></i> ESPÍRITO SANTO</span></div></div>
-                    <p>Não, essa já é minha SENHOR!</p>
-                </div>
-
-                <div class="dialogue-card c-espirito">
-                    <div class="char-header"><div class="char-main">ESPÍRITO SANTO <span class="tag"><i class="fa-solid fa-chevron-right"></i> INIMIGO</span></div></div>
-                    <p><strong>Basta.</strong></p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Silêncio.</span><br>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O inimigo abaixa a cabeça e vai se afastando</span>
-                    <p>Você não toca mais nela.<br>Ela não é sua. Ela nunca foi sua.<br>Esta vida pertence a Mim.</p>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="char-target-tag t-espirito"><i class="fa-solid fa-chevron-right"></i> ESPÍRITO SANTO</span></div></div>
-                    <p>Não Senhor! Foi Ela me deu espaço!<br>Ela quis me ouvir!</p>
-                </div>
-
-                <div class="dialogue-card c-espirito">
-                    <div class="char-header"><div class="char-main">ESPÍRITO SANTO <span class="tag"><i class="fa-solid fa-chevron-right"></i> INIMIGO</span></div></div>
-                    <p>Você é acusador;<br>Mas não existe condenação onde Eu estou presente!<br>Você tem liberdade para agir pelas sombras mas hoje a Luz entrou nesse lar!<br>Saia e não volte mais!</p>
-                </div>
-
-                <div class="dialogue-card c-inimigo">
-                    <div class="char-header"><div class="char-main">INIMIGO <span class="tag"><i class="fa-solid fa-chevron-right"></i> SAI RECLAMANDO</span></div></div>
-                    <p>Eu odeio sua Graça!<br>Eu odeio sua misericórdia!<br>Você toma tudo que é meu.<br>Eu odeio seu perdão.<br><strong>Isso ainda não acabou!</strong></p>
-                </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu sou livre.</p>
+                <span class="stage-direction">[O Inimigo coloca a mochila em Rafa.]</span>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- PARTE 6 -->
-        <section class="scene-section expanded" id="scene-8" data-title="Parte 6 - Restauração">
-            <div class="scene-header accordion-header" onclick="toggleScene(this)">
-  <div class="scene-title-wrapper">
-    <h2 class="scene-title">Parte 6 - Restauração</h2>
-    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-  </div>
-  <div class="scene-divider"></div>
-</div>
-            <div class="scene-content">
-                <div class="music-cue"><i class="fa-solid fa-music"></i> [Trilha Sonora - Música]</div>
-
-                <div class="action-text block-action">
-                    [O Espírito Santo se abaixa até a Filha. Não fala de cima. Ele se aproxima com cuidado e a abraça. A cena precisa ser lenta e silenciosa por alguns segundos.]
-                </div>
-
-                <div class="dialogue-card c-espirito">
-                    <div class="char-header"><div class="char-main">ESPÍRITO SANTO <span class="char-target-tag t-filha"><i class="fa-solid fa-chevron-right"></i> FILHA</span></div></div>
-                    <p>Filha…Respira. Eu estou aqui.</p>
-                    <p>Eu estava aqui quando você achou que ninguém via.</p>
-                    <p><strong>Eu estava.</strong> Mas as mentiras gritavam muito alto em seu coração!.</p>
-                    <p>Agora escute a Minha voz, eu desfaço toda fortaleza do Inimigo.<br>Eu desfaço todas as palavras costuradas em seu coração!</p>
-                    <p>Você não é invisível. Você não é o quarto fechado.<br>Você não precisa se comparar!<br>Você é minha filha linda e amada!</p>
-                </div>
-
-                <div class="dialogue-card c-filha">
-                    <div class="char-header"><div class="char-main">FILHA <span class="char-target-tag t-espirito"><i class="fa-solid fa-chevron-right"></i> ESPÍRITO SANTO</span></div></div>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Ainda chorando, mas respirando melhor.</span>
-                    <p>Eu não entendo… Eu não sei explicar.<br>Parece que tinha um peso em cima de mim.<br>Como se alguma coisa apertasse meu peito o tempo todo.</p>
-                    <p>E agora…Eu ainda estou chorando…</p>
-                    <p>Mas parece diferente. Parece que a tristeza está saindo.<br>Eu não sei se amanhã vai ser difícil<br>Mas agora eu consigo pensar no amanhã com esperança!</p>
-                    <p>Eu consigo sentir paz.<br>Aquelas vozes estão sumindo!</p>
-                    <p>Eu não quero morrer.<br>Eu quero falar com meus pais!</p>
-                    <p>Eu ainda tenho medos…<br>Mas eu quero, eu preciso sair desse quarto.</p>
-                </div>
-
-                <div class="dialogue-card c-espirito">
-                    <div class="char-header"><div class="char-main">ESPÍRITO SANTO <span class="char-target-tag t-filha"><i class="fa-solid fa-chevron-right"></i> FILHA</span></div></div>
-                    <p>Então venha. Você não vai sozinha.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Espírito Santo ajuda a Filha a se levantar. Ele a conduz devagar para fora do quarto, em direção à família. A Mãe, Pai e Filho estão ajoelhados</span><br>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> A Filha aparece. A mãe tenta se aproximar, mas se segura e respeita o tempo da filha</span>
-                </div>
-
-                <div class="dialogue-card c-mae">
-                    <div class="char-header"><div class="char-main">MÃE</div></div>
-                    <p>Filha…tudo bem? Eu posso chegar perto?</p>
-                </div>
-
-                <div class="dialogue-card c-filha">
-                    <div class="char-header"><div class="char-main">FILHA</div></div>
-                    <p><span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> Com a voz baixa.</span> Pode.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> A Mãe se aproxima e abraça ela</span>
-                </div>
-
-                <div class="dialogue-card c-mae">
-                    <div class="char-header"><div class="char-main">MÃE <span class="char-target-tag t-filha"><i class="fa-solid fa-chevron-right"></i> FILHA</span></div></div>
-                    <p>Me perdoa filha. <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> pausa</span></p>
-                    <p>Eu vi sua porta fechada e achei que era fase.<br>Vi seu silêncio e achei que era rebeldia.<br>Vi sua tristeza e achei que era exagero.<br>Mas você estava pedindo socorro.<br>E eu não ouvi.</p>
-                    <p>Me perdoa por não ter sentado na sua cama pra conversar!<br>Por não ter insistido.</p>
-                    <p>Filho<br>Me perdoa também.<br>Eu te corrigi sem te ouvir.<br>Eu te afastei quando você precisava de direção.</p>
-                    <p>Vocês são benção na minha vida!<br>Eu quero ser uma mãe melhor!<br>Eu amo vocês!</p>
-                </div>
-
-                <div class="dialogue-card c-filha">
-                    <div class="char-header"><div class="char-main">FILHA <span class="char-target-tag t-mae"><i class="fa-solid fa-chevron-right"></i> MÃE E PAI</span></div></div>
-                    <p>Eu não preciso de pais perfeitos.<br>Só preciso de vocês ao meu lado!<br>Me perdoa também por me fechar.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i> O Pai se aproxima. Ele está envergonhado, mas abraça ela junto a mãe</span>
-                </div>
-
-                <div class="dialogue-card c-pai">
-                    <div class="char-header"><div class="char-main">PAI <span class="char-target-tag t-filho"><i class="fa-solid fa-chevron-right"></i> FILHO</span></div></div>
-                    <p>Filho… VEM<br>Eu também preciso pedir perdão pra vocês.<br>Eu cobrei vocês mais que tudo<br>Eu critiquei<br>Eu não soube conversar.<br>Eu olhava para vocês e não enxergava como estavam sofrendo.</p>
-                    <p>Mas hoje eu estou vendo vocês.<br><strong>Você é minha filha.</strong><br><strong>Você é minha filho.</strong></p>
-                    <p>E eu sinto muito por ter feito vocês duvidarem disso.</p>
-                    <p>Se vocês deixarem…<br>Eu quero estar mais perto.</p>
-                </div>
-
-                <div class="dialogue-card c-filho">
-                    <div class="char-header"><div class="char-main">FILHO <span class="char-target-tag t-pai"><i class="fa-solid fa-chevron-right"></i> PAIS E IRMÃ</span></div></div>
-                    <p>Com certeza pai.<br>Eu queria ouvir isso há muito tempo.</p>
-                    <p>Me perdoem<br>Eu também errei com todos vocês.<br>Eu senti tanta falta da nossa família.</p>
-                    <span class="stage-direction"><i class="fa-solid fa-masks-theater"></i>  Eles se abraçam. Não precisa ser um abraço eufórico; precisa ser verdadeiro.</span>
-                </div>
-
-                
+    <!-- TAKE 1 - CARLOS -->
+    <section class="scene-section expanded" id="scene-4" data-title="Take 1 — Carlos">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 1 — Carlos</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
             </div>
-        </section>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Minha coroa sempre foi minha inspiração.<br>
+                Era gente boa demais, minha alegria.<br>
+                Sempre falava que Deus tinha um plano pra mim.<br>
+                Que eu tinha um “chamado”. Nem sei direito que parada é essa.</p>
+                <span class="stage-direction">[Ri brevemente.]</span>
+                <p>Sempre me apoiou.<br>
+                Depois que ela se foi...</p>
+                <span class="stage-direction">[Faz o sinal da cruz.]</span>
+                <p>Eu perdi meu chão. Meu pai entrou pra igreja só depois que ela faleceu e, tipo, ele se encontrou de verdade.<br>
+                Mas ficou chatão depois disso. Deixou de curtir a vida e quis me impedir de curtir também.<br>
+                E essa parada de igreja não é pra mim, não.<br>
+                Com vários papos de horário pra chegar em casa, quis impor vários limites com drogas.<br>
+                E ele vivia dizendo que meus amigos não eram bons pra mim.<br>
+                Ah, mano, papo reto, para evitar estresse, eu saí de casa.<br>
+                Queria provar que conseguia viver sozinho.<br>
+                Sem depender de ninguém.<br>
+                Sem dar satisfação pra ninguém.</p>
+                <span class="stage-direction">[O Inimigo se aproxima.]</span>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Agora ninguém manda em você.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>É isso. Eu corro atrás das minhas paradas.<br>
+                Levo as mulherzinhas pra casa.<br>
+                Fumo meu baseado quando eu quiser.<br>
+                Ando com quem eu quiser.</p>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Você é livre.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Eu sou livre!</p>
+                <span class="stage-direction">[O Inimigo coloca a mochila em Carlos.]</span>
+            </div>
+        </div>
+    </section>
 
-        
-        
-    </main>
+    <!-- TAKE 2 - RAFA -->
+    <section class="scene-section expanded" id="scene-5" data-title="Take 2 — Rafa">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 2 — Rafa</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[Rafa desperta como se tivesse saído de um pensamento.]</span>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu sou livre! Tenho uma vida ótima.<br>
+                Não preciso de mais nada.</p>
+                <span class="stage-direction">[Pausa reflexiva.]</span>
+                <p>Mas, quando eu deito... vem um vazio.<br>
+                Uma coisa estranha no peito que eu não sei explicar.<br>
+                Eu tenho liberdade, mas não tenho paz.</p>
+                <span class="stage-direction">[Ela tenta tirar a mochila, mas não consegue.]</span>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Você só está cansada. Pega o celular.<br>
+                Assiste àquela série nova. Esquece isso.</p>
+                <span class="stage-direction">[Entrega o celular fictício.]</span>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Boa ideia. Talvez um dorama ajude.</p>
+                <span class="stage-direction">[Rafa começa a assistir. Ri por alguns segundos. Depois, seu rosto volta a ficar vazio.]</span>
+            </div>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- TAKE 2 - CARLOS -->
+    <section class="scene-section expanded" id="scene-6" data-title="Take 2 — Carlos">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 2 — Carlos</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[Carlos desperta como se tivesse saído de um pensamento.]</span>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Eu sou livre! Eu faço o que quero, na hora que quero.</p>
+                <span class="stage-direction">[Pausa reflexiva.]</span>
+                <p>Mas a verdade? Eu sinto falta da minha mãe.<br>
+                E do meu pai também. Ele sempre tinha uma palavra de ânimo pra mim.<br>
+                Agora está tudo difícil. Tem dia que eu acordo sem saber como vou pagar o aluguel.<br>
+                Meu sonho era ter minha motinha. Agora virou parcela, manutenção e dor de cabeça.<br>
+                Sempre aparece alguém falando:<br>
+                “Tenho um jeito fácil.” E vou ser sincero...<br>
+                Eu só não aceitei ainda porque acredito em Deus.<br>
+                Mesmo não sendo crente.<br>
+                Eu tento fazer tudo certo.<br>
+                Mas estou cansado de só sobreviver.</p>
+                <span class="stage-direction">[Ele tenta tirar a mochila, mas não consegue.]</span>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Você é bobo!<br>
+                Porque Deus não está nem aí pra você.<br>
+                Faz o seguinte: vai pra varanda fumar um, que tudo fica bem.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Talvez um fininho resolva.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 3 - RAFA E MANU -->
+    <section class="scene-section expanded" id="scene-7" data-title="Take 3 — Rafa e Manu">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 3 — Rafa e Manu</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[Manu entra. Rafa diz baixinho: "Eu sou livre."]</span>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Oi, Rafa.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Oi, amiga.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Está tudo bem?</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Estou viva. Já é alguma coisa.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Não foi isso que eu perguntei.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Estou bem, Manu.</p>
+                <span class="stage-direction">[Manu faz um olhar de “será?”.]</span>
+                <p>Não começa, porque daqui a pouco vem sermão.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Eu nem falei nada.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Mas pensou. Crente é tudo igual.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Eu perguntei porque me importo com você.<br>
+                E eu amo sua vida.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Também te amo. Você é uma das poucas pessoas da igreja com quem ainda consigo conversar.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Então não precisa fingir comigo. O que aconteceu?</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Não sei. Estou triste de novo.<br>
+                Minha vida está indo bem, mas esse vazio sempre volta.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Talvez esse vazio não tenha a ver com conquistas.<br>
+                A gente se prende demais às coisas materiais, status, buscamos estabilidade e paz exterior.<br>
+                A gente cuida da vida por fora e esquece do nosso interior.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Começou a pregação...<br>
+                Já disse que não gosto de religião.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Tá bom, chata. Você nunca escuta.<br>
+                E eu não estou falando de religião.<br>
+                Estou falando de Jesus.<br>
+                Mas, claro, também sinto sua falta nos cultos.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu oro em casa.<br>
+                Não preciso de igreja pra ter Deus.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Deus pode te encontrar em qualquer lugar.<br>
+                Mas Ele também nos criou para a comunhão, amiga.<br>
+                É como um carvão fora da brasa.<br>
+                Continua quente por um tempo, mas, sozinho, vai apagando.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Agora eu sou um carvão?<br>
+                E que comunhão é essa?<br>
+                Ninguém está nem aí pra ninguém dentro da igreja.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Eu sei que você foi ferida.<br>
+                Eu também já me decepcionei.<br>
+                Mas foram pessoas, Rafa.<br>
+                Não foi a igreja de Jesus e muito menos Jesus.<br>
+                Pessoas são falhas dentro e fora da igreja.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu sou melhor que muito cristão por aí.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Mas Jesus não chamou os perfeitos.<br>
+                Ele chamou os falhos, porque Ele é quem nos ensina todas as coisas.<br>
+                É o Espírito de Deus quem nos transforma.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Não disse que sou perfeita, mas, como a Bíblia diz:<br>
+                Deus me ama como eu sou, independentemente de onde estou.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Sim, Jesus te ama e nunca desistiu de você.<br>
+                Ele te aceita como você está, mas o convite dEle é justamente reconhecer o nosso estado e onde estamos, porque Ele tem lugares muito mais elevados para nós.<br>
+                Não estou falando de voltar para uma rotina vazia de ir aos cultos.<br>
+                Estou falando de deixar Jesus curar por completo seu coração.</p>
+                <span class="stage-direction">[Rafa faz uma expressão pensativa, mas reluta com a ministração.]</span>
+                <p>Só quero que saiba que eu te amo.<br>
+                Se precisar, tô aqui.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Tá bom... Eu aceito uma oração.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Claro.</p>
+                <span class="stage-direction">[Manu segura as mãos de Rafa.]<br>
+                [Manu ora em voz alta.]<br>
+                [Durante a oração, o Inimigo recua.]<br>
+                [Manu retira a mochila de Rafa.]<br>
+                [Rafa respira profundamente, aliviada.]</span>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Cara... Eu senti alguma coisa diferente. Parece que o peso diminuiu.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Glória a Deus, mas, amiga, você não nasceu pra sentir alívios de vez em quando.<br>
+                Jesus quer carregar o fardo com você.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Não é tão simples. Deixa isso mais pra frente.<br>
+                Quando for a hora, eu vou sentir no coração.<br>
+                Obrigada, amiga.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Beijos, amiga. Tchau...</p>
+                <span class="stage-direction">[Fala enquanto se afasta.]</span>
+                <p>Não espera ficar pior.<br>
+                Jesus te chamou pra ser livre de verdade.</p>
+                <span class="stage-direction">[Manu sai.]<br>
+                [O Inimigo retorna e segura a mochila.]<br>
+                [Entrega o celular pra Rafa.]</span>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Oi, Bia. Festa? Hoje?<br>
+                Ele vai estar lá? Tá, tá, vou ver...<br>
+                Não sei se estou no clima hoje, não.</p>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Aceita. Você é livre. Isso vai ser bom pra você.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Tá bom, amiga, vou sim!</p>
+                <span class="stage-direction">[Desliga.]</span>
+                <p>Eu sou livre.</p>
+                <span class="stage-direction">[Dessa vez, ela fala com menos convicção.]<br>
+                [O Inimigo coloca a mochila nela de novo.]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 3 - A PROPOSTA -->
+    <section class="scene-section expanded" id="scene-8" data-title="Take 3 — A Proposta">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 3 — A Proposta</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[LC entra.]<br>
+            [Carlos diz baixinho: “Eu sou livre.”]</span>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>E aí, Carlos? Que papo é esse de que tu está livre? Tava preso, mano?</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Que isso? Está maluco? kk. Estava pensando alto.</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Então se liga, mano.<br>
+                Tu está precisando de grana, né?</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Quem não está?</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Tenho uma parada pra hoje à noite. Grana rápida. Nada demais.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Só não quero coisa errada.</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Mas tu não é livre? Tem isso de certo e errado, não, pô.<br>
+                Tem que fazer o que precisa ser feito e fé. É só entregar uma parada.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Não, mano. Tipo, eu tenho meus princípios, tlgd.</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Valores? Tu não compra uma roupa nova há meses.<br>
+                Tua casa está caindo. Tua moto está um mamão.<br>
+                Tua geladeira está vazia.<br>
+                Estou tentando te ajudar.<br>
+                Ou tu acha que princípios pagam boleto?</p>
+                <span class="stage-direction">[Carlos fica pensativo. O Inimigo sussurra em seu ouvido.]</span>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Está falando de quanto?</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>O suficiente pra tu respirar por uns três meses.<br>
+                E, se quiser levantar mais, fazemos umas paradas no caminho.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Que paradas?</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Coisa rápida. Ninguém vai se machucar.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>É só uma vez?</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Claro. Só uma vez.</p>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Você é livre.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Eu sou livre.</p>
+                <span class="stage-direction">[O Inimigo amarra a mochila dele com uma corda.]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 4 - O ENCONTRO -->
+    <section class="scene-section expanded" id="scene-9" data-title="Take 4 — O Encontro">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 4 — O Encontro</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[Bia entra no lado de Rafa, ajudando-a a se arrumar.]</span>
+            <div class="dialogue-card c-bia">
+                <div class="char-header"><div class="char-main">BIA</div></div>
+                <p>Hoje você vai esquecer todos os seus problemas.<br>
+                Festa, bebida, gente bonita... Tem dois amigos interessados em você.<br>
+                Você está precisando viver.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu nem sei se quero ir.</p>
+            </div>
+            <div class="dialogue-card c-bia">
+                <div class="char-header"><div class="char-main">BIA</div></div>
+                <p>Para de pensar.<br>
+                Hoje é noite de ficar louca e esquecer tudo.</p>
+                <span class="stage-direction">[Bia sai à frente. Rafa a acompanha.]<br>
+                [Do outro lado, LC volta de moto e entrega um pacote a Carlos.]</span>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Leva isso. Não abre. Não pergunta. Só entrega e depois me encontra.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>E depois acabou?</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Depois tu recebe. Vai na fé.</p>
+                <span class="stage-direction">[LC sai.]<br>
+                [Carlos e Rafa caminham em direções opostas, bem devagar, olhando pro chão.]<br>
+                [Reclamando da decisão, arrependidos e repensando tudo, eles se esbarram.]</span>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Cuidado!</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Foi mal, novinha.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu te conheço. Você não é o filho da Vanda? Sua mãe era da igreja em que eu congreguei, e eu amava tanto ela.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Sou eu, sim. Você é a menina do louvor, certo?</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Já fui, mas não participo mais da igreja.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Que pena. Você tinha uma voz tão linda.<br>
+                Eu sempre sentia uma parada muito boa.</p>
+                <span class="stage-direction">[Rafa fica sem graça.]</span>
+                <p>Você está bem? Tá com uma cara de preocupada.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Nossa, que gentil.<br>
+                E você está com uma cara de arrependimento.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Foi mal. Mas, sim, meio que estou bem arrependido de algumas escolhas que fiz na vida.<br>
+                Não deveria estar seguindo esse caminho. “Mas é só hoje.”</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Engraçado... Eu também falei exatamente isso.</p>
+                <span class="stage-direction">[Os dois dão um riso meio triste, mas o riso desaparece rápido.]<br>
+                [Bia chama Rafa de longe.]<br>
+                [LC chama Carlos.]<br>
+                [Eles se afastam em direções opostas.]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 5 - A FESTA -->
+    <section class="scene-section expanded" id="scene-10" data-title="Take 5 — A Festa">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 5 — A Festa (Rafa)</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[Bia coloca um copo na mão de Rafa. Elas curtem. Rafa está meio incomodada, mas Bia insiste.]</span>
+            <div class="dialogue-card c-bia">
+                <div class="char-header"><div class="char-main">BIA</div></div>
+                <p>Você veio pra esquecer ou pra ficar pensando?</p>
+                <span class="stage-direction">[Rafa bebe.]</span>
+                <p>Agora sim! Essa é a Rafa que eu conheço!<br>
+                Viu? Era disso que você precisava. Música. Bebida.<br>
+                Alguém desejando você.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Hoje eu não quero sentir nada.</p>
+                <span class="stage-direction">[Saem de cena.]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 5 - O PAGAMENTO -->
+    <section class="scene-section expanded" id="scene-11" data-title="Take 5 — O Pagamento">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 5 — O Pagamento</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Aqui está a grana.<br>
+                Isso é só o começo.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Mano, não quero mais. Você falou que era só aquela vez.<br>
+                Acho que vou consertar minha vida.</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Tu vai dar esse mole?<br>
+                Tu não tem outra opção, não, mano.<br>
+                O dono lá é amarradão em você.<br>
+                Vai te ajudar a crescer rápido no morro.<br>
+                Tu vai ter mulher, fama e dinheiro fácil.</p>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Agora não dá mais pra voltar.<br>
+                Essa é sua única escolha.</p>
+                <span class="stage-direction">[Carlos fica pensativo.]<br>
+                [O celular de Carlos toca.]</span>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Alô? Pai?<br>
+                Não, pai, agora não dá pra falar.<br>
+                Estou ocupado.<br>
+                Sentiu de Deus de me ligar?<br>
+                Não, estou bem, sim.<br>
+                Ajuda?</p>
+                <span class="stage-direction">[Pausa.]</span>
+                <p>Não preciso de ajuda, não.</p>
+                <span class="stage-direction">[Desliga.]</span>
+                <p>Cara, eu vou pensar direitinho.</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Até hoje à noite tu tem que me passar a visão.<br>
+                O dono do morro vai ao teu encontro.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 6 - DEPOIS DA FESTA -->
+    <section class="scene-section expanded" id="scene-12" data-title="Take 6 — Depois da Festa">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 6 — Depois da Festa</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[Rafa chega em casa desequilibrada.]</span>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu bebi. Dancei. Fiquei com um cara legal...<br>
+                Então por que continuo triste?<br>
+                Eu só queria esquecer por uma noite. Por que nada funciona?</p>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Porque você não fez o suficiente. Na próxima, beba mais.<br>
+                Conheça outra pessoa. Vá a outro lugar.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>E depois? Talvez eu devesse ligar pra Manu.<br>
+                Talvez eu devesse voltar pra igreja.</p>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Igreja? Eu tenho algo melhor.</p>
+                <span class="stage-direction">[O Inimigo sai e busca uma pessoa.]</span>
+            </div>
+            <div class="dialogue-card c-religiao">
+                <div class="char-header"><div class="char-main">RELIGIÃO</div></div>
+                <p>Olá, Rafaela. Tudo bem?</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Sim? Quem é você?</p>
+            </div>
+            <div class="dialogue-card c-religiao">
+                <div class="char-header"><div class="char-main">RELIGIÃO</div></div>
+                <p>Alguém que entende o que você precisa.<br>
+                Posso te ajudar a descobrir seu caminho.<br>
+                O que falta na sua vida.<br>
+                Talvez o amor certo.<br>
+                A pessoa destinada a você.<br>
+                O emprego ou a casa dos sonhos.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>E como eu descubro isso?</p>
+            </div>
+            <div class="dialogue-card c-religiao">
+                <div class="char-header"><div class="char-main">RELIGIÃO</div></div>
+                <p>Existem consultas espirituais. Métodos.<br>
+                Formas de entender sua energia, seu futuro e seu propósito.<br>
+                Sem culpa. Sem cobrança. Sem precisar mudar quem você é, como na igreja.</p>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Parece bem mais fácil.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>E isso vai tirar esse vazio que eu sinto?</p>
+            </div>
+            <div class="dialogue-card c-religiao">
+                <div class="char-header"><div class="char-main">RELIGIÃO</div></div>
+                <p>Olha, isso eu não sei, mas vou te dar as respostas que você procura.</p>
+                <span class="stage-direction">[Elas começam o trabalho.]</span>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu ouvi tantas respostas...<br>
+                Mas agora tenho ainda mais perguntas.<br>
+                Ainda não me encontrei.</p>
+            </div>
+            <div class="dialogue-card c-religiao">
+                <div class="char-header"><div class="char-main">RELIGIÃO</div></div>
+                <p>Talvez você precise de outra consulta. Ou de outro método.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Não. Chega.</p>
+                <span class="stage-direction">[Ela fica atribulada e angustiada. A Religião sai sorrindo.]<br>
+                [O Inimigo permanece, também sorrindo.]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 6 - DINHEIRO, NOME E FAMA -->
+    <section class="scene-section expanded" id="scene-13" data-title="Take 6 — Dinheiro, Nome e Fama">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 6 — Dinheiro, Nome e Fama</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[Entram o Dono do Morro, LC, Nathália e Mayara.]</span>
+            <div class="dialogue-card c-dono">
+                <div class="char-header"><div class="char-main">DONO DO MORRO</div></div>
+                <p>Meu amigo! E aí?<br>
+                LC falou que você vai fechar com nós?</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Poxa, eu não sei, irmão.</p>
+            </div>
+            <div class="dialogue-card c-dono">
+                <div class="char-header"><div class="char-main">DONO DO MORRO</div></div>
+                <p>Tu já vai começar fortão, cheio da grana.<br>
+                Te deixei cheio de moral entre os crias.</p>
+                <span class="stage-direction">[Coloca a arma na mão dele.]</span>
+                <p>O que mais tu quer?</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Eu quero dormir sem acordar preocupado, irmão.</p>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Para com isso. Vou deixar a Nathália contigo esta noite pra você dormir bem.</p>
+            </div>
+            <div class="dialogue-card c-mulheres">
+                <div class="char-header"><div class="char-main">NATHÁLIA</div></div>
+                <p>Vai ser um prazer.</p>
+            </div>
+            <div class="dialogue-card c-mulheres">
+                <div class="char-header"><div class="char-main">MAYARA</div></div>
+                <p>Se quiser, eu vou junto.</p>
+            </div>
+            <div class="dialogue-card c-dono">
+                <div class="char-header"><div class="char-main">DONO DO MORRO</div></div>
+                <p>E aí, fecha ou não?<br>
+                Sem dois papos.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Sim.</p>
+                <span class="stage-direction">[Todos saem.]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 7 - O PAI -->
+    <section class="scene-section expanded" id="scene-14" data-title="Take 7 — O Pai">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 7 — O Pai</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <div class="dialogue-card c-pai">
+                <div class="char-header"><div class="char-main">PAI</div></div>
+                <p>Carlos?</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Pai, o que está fazendo aqui?</p>
+            </div>
+            <div class="dialogue-card c-pai">
+                <div class="char-header"><div class="char-main">PAI</div></div>
+                <p>Você não respondeu minha ligação.<br>
+                Mas Deus me incomodou pra vir te ver.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Está tudo bem, pai.<br>
+                Eu não quero sermão.</p>
+            </div>
+            <div class="dialogue-card c-pai">
+                <div class="char-header"><div class="char-main">PAI</div></div>
+                <p>Então não vou dar sermão.<br>
+                Só quero saber se posso orar com você.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Orar vai mudar o quê na minha vida?</p>
+            </div>
+            <div class="dialogue-card c-pai">
+                <div class="char-header"><div class="char-main">PAI</div></div>
+                <p>Talvez não mude tudo ao seu redor agora.<br>
+                Mas pode lembrar você de que não está sozinho.</p>
+                <span class="stage-direction">[Carlos hesita, mas aceita.]</span>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Pode ser. Mas é rápido, né?</p>
+                <span class="stage-direction">[O Pai retira a mochila enquanto ora.]<br>
+                [Carlos respira profundamente.]</span>
+                <p>Mano... Parece que eu estava respirando pela metade. Saiu um peso enorme de mim.</p>
+            </div>
+            <div class="dialogue-card c-pai">
+                <div class="char-header"><div class="char-main">PAI</div></div>
+                <p>Você não precisa continuar carregando isso.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Você não sabe o que eu fiz.</p>
+            </div>
+            <div class="dialogue-card c-pai">
+                <div class="char-header"><div class="char-main">PAI</div></div>
+                <p>Não sei. Mas Jesus sabe. E, mesmo assim, me trouxe você até aqui.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Não dá pra largar tudo agora. Tem gente envolvida.<br>
+                Se eu sair, dá ruim pra mim.</p>
+            </div>
+            <div class="dialogue-card c-pai">
+                <div class="char-header"><div class="char-main">PAI</div></div>
+                <p>Continuar também vai.</p>
+                <span class="stage-direction">[Pausa reflexiva.]</span>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Eu tenho que ir, pai. Foi bom te ver.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAKE 8 - O EMPREGO E A REAÇÃO FINAL -->
+    <section class="scene-section expanded" id="scene-15" data-title="Take 8 — O Emprego e a Queda">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">Take 8 — O Emprego e a Queda</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu estou decidida: vou voltar à igreja.<br>
+                Neste domingo, vou mandar uma mensagem pra Manu.</p>
+                <span class="stage-direction">[Rafa começa a digitar.]<br>
+                [A Recrutadora entra.]</span>
+            </div>
+            <div class="dialogue-card c-recrutadora">
+                <div class="char-header"><div class="char-main">RECRUTADORA</div></div>
+                <p>Rafa? Recebi ótimas referências sobre você.<br>
+                Tenho uma oportunidade muito melhor do que o seu emprego atual.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Melhor como?</p>
+            </div>
+            <div class="dialogue-card c-recrutadora">
+                <div class="char-header"><div class="char-main">RECRUTADORA</div></div>
+                <p>Salário maior. Cargo melhor. Reconhecimento. Possibilidade de crescimento.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Parece ótimo. Que bom. Foi só falar que ia voltar pra igreja que milagre.</p>
+                <span class="stage-direction">[O Inimigo ri.]</span>
+            </div>
+            <div class="dialogue-card c-recrutadora">
+                <div class="char-header"><div class="char-main">RECRUTADORA</div></div>
+                <p>Então, mas nós precisamos de dedicação total. Inclusive aos domingos.<br>
+                Nesta empresa, quem quer crescer precisa estar disponível.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Todos os domingos?</p>
+            </div>
+            <div class="dialogue-card c-recrutadora">
+                <div class="char-header"><div class="char-main">RECRUTADORA</div></div>
+                <p>Você quer construir uma carreira ou continuar presa a compromissos que não levam você a lugar nenhum?</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu ainda não sei. Posso responder amanhã?</p>
+            </div>
+            <div class="dialogue-card c-recrutadora">
+                <div class="char-header"><div class="char-main">RECRUTADORA</div></div>
+                <p>Sim, mas de amanhã não passa.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Seria um sonho, mas não sei por que meu coração não ficou feliz.<br>
+                Preciso espairecer minha mente...</p>
+                <span class="stage-direction">[Carlos desperta.]</span>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Tem tanta coisa acontecendo. Preciso tomar um ar fresco.</p>
+                <span class="stage-direction">[Carlos e Rafa se trombam novamente.]</span>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Você de novo. O menino do “só hoje”.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>A menina do louvor.<br>
+                Como foi a festa?</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Simplesmente fútil. E o seu “só hoje”?</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Virou todo dia.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>E a culpa continua?</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Todos os dias. E você encontrou o que procurava?</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu, no fundo, sei o que preciso.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA E CARLOS</div></div>
+                <p>Eu queria voltar.</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Pra onde?</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Eu não sei. Pra Deus. E você?</p>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Eu ainda não sei. Só queria ouvir Deus falar comigo.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Talvez a gente tenha ido longe demais. Será que tem como voltar?</p>
+                <span class="stage-direction">[O Inimigo surge.]</span>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">INIMIGO</div></div>
+                <p>Agora não existe volta.</p>
+                <span class="stage-direction">[Ele toca em todos. Eles despertam e começam a julgá-los.]</span>
+            </div>
+            <div class="dialogue-card c-lc">
+                <div class="char-header"><div class="char-main">LC</div></div>
+                <p>Tu acha que vai simplesmente sair? Você não é ninguém.</p>
+            </div>
+            <div class="dialogue-card c-bia">
+                <div class="char-header"><div class="char-main">BIA</div></div>
+                <p>Vai voltar pra igreja depois de tudo que fez? Que hipocrisia.<br>
+                Falsa crente. Bêbada. Piranha.</p>
+            </div>
+            <div class="dialogue-card c-religiao">
+                <div class="char-header"><div class="char-main">RELIGIÃO</div></div>
+                <p>Você tentou muitas religiões. Por que Deus receberia você agora?</p>
+            </div>
+            <div class="dialogue-card c-recrutadora">
+                <div class="char-header"><div class="char-main">RECRUTADORA</div></div>
+                <p>Você não vai ter futuro se continuar na igreja.<br>
+                Primeiro, seus bens materiais...</p>
+            </div>
+            <div class="dialogue-card c-mulheres">
+                <div class="char-header"><div class="char-main">MULHERES</div></div>
+                <p>Sem dinheiro, sem fama e sem ninguém te desejando, você não é nada.</p>
+            </div>
+            <div class="dialogue-card c-inimigo">
+                <div class="char-header"><div class="char-main">VOZES MÚLTIPLAS</div></div>
+                <p>Drogado!<br>
+                Pecadora!<br>
+                Hipócrita!<br>
+                Suja!<br>
+                Bandido!<br>
+                Fracassada!<br>
+                Seu pai tem vergonha de você!<br>
+                Deus não vai perdoar você!<br>
+                Deus não escuta pecadores como vocês!<br>
+                Vocês escolheram isso!<br>
+                Vocês merecem esse peso!<br>
+                Vocês nunca serão livres!</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Chega!</p>
+                <span class="stage-direction">[As vozes diminuem por um instante.]</span>
+                <p>Eu estou cansada de fingir.<br>
+                Cansada de dizer que sou livre enquanto sou controlada por tudo.<br>
+                Pelo medo. Pelo vazio.<br>
+                Pelo trabalho. Pela necessidade de ser amada.</p>
+                <span class="stage-direction">[Olha para cima.]</span>
+                <p>Jesus... Eu não quero mais um alívio.<br>
+                Eu não quero culpar os outros.<br>
+                Eu quero uma nova vida.<br>
+                Me perdoa.<br>
+                Eu quero voltar.<br>
+                Eu quero voltar pra ti.<br>
+                Eu quero te conhecer de verdade.</p>
+                <span class="stage-direction">[As Vozes tentam interromper: "Ele não vai receber você!"]</span>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Calem a boca!</p>
+                <span class="stage-direction">[Carlos joga o dinheiro e a arma no chão.]</span>
+                <p>Jesus... Eu fiz coisa errada.<br>
+                Eu menti. Eu machuquei gente.<br>
+                Desonrei meu pai. Tentei conseguir do meu jeito o que eu devia ter colocado nas tuas mãos.<br>
+                Eu não consigo sair disso sozinho. Eu não mereço...</p>
+                <span class="stage-direction">[Pausa.]</span>
+                <p>Mas eu ainda acredito na tua misericórdia.<br>
+                Me perdoa. Me tira dessa vida.<br>
+                Me leva de volta pra casa.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA E CARLOS</div></div>
+                <p>Jesus, salva a gente!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- A LIBERTAÇÃO -->
+    <section class="scene-section expanded" id="scene-16" data-title="A Libertação">
+        <div class="scene-header accordion-header" onclick="toggleScene(this)">
+            <div class="scene-title-wrapper">
+                <h2 class="scene-title">A Libertação</h2>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="scene-divider"></div>
+        </div>
+        <div class="scene-content">
+            <span class="stage-direction">[Jesus entra.]</span>
+            <div class="dialogue-card c-jesus">
+                <div class="char-header"><div class="char-main">JESUS</div></div>
+                <p>Basta.</p>
+                <span class="stage-direction">[Todos caem gritando e depois saem abaixados.]</span>
+                <p>Rafa. Eu vi cada lágrima que você escondeu atrás de um sorriso.<br>
+                Vi quando procurou amor em lugares que só aumentaram suas feridas.<br>
+                Eu nunca deixei de chamar você.<br>
+                Minha graça chegou mais longe.</p>
+                <p>Carlos. Vi sua culpa, sua ansiedade, seus vícios e todas as noites em que pensou não existir saída.<br>
+                Eu vim te dizer que existe uma saída, e eu sou o caminho.<br>
+                E, na cruz, eu paguei o preço.<br>
+                A culpa diz: “Acabou.”<br>
+                A cruz diz: “Está consumado.”<br>
+                A condenação diz: “Fiquem no chão.”<br>
+                Eu digo:</p>
+                <span class="stage-direction">[Com autoridade.]</span>
+                <p>Levantem-se.</p>
+                <span class="stage-direction">[Jesus tira as mochilas.]<br>
+                [Ele abre as mochilas. De dentro delas caem palavras e objetos: CULPA, VAZIO, MEDO, ANSIEDADE, ORGULHO, CONFUSÃO, PECADO, CONDENAÇÃO e várias outras.]</span>
+                <p>Vocês não são o que fizeram. Também não são aquilo que fizeram contra vocês.<br>
+                Em mim, existe perdão. Existe restauração. Existe liberdade. Existe uma nova vida.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>E agora?</p>
+            </div>
+            <div class="dialogue-card c-jesus">
+                <div class="char-header"><div class="char-main">JESUS</div></div>
+                <p>Agora vocês caminham comigo.<br>
+                Um dia de cada vez. E eu os sustentarei.</p>
+            </div>
+            <div class="dialogue-card c-pai">
+                <div class="char-header"><div class="char-main">PAI</div></div>
+                <p>Oi, filho. Queria muito almoçar contigo hoje.</p>
+                <span class="stage-direction">[Eles se abraçam.]</span>
+            </div>
+            <div class="dialogue-card c-carlos">
+                <div class="char-header"><div class="char-main">CARLOS</div></div>
+                <p>Claro, pai. Com certeza. Tenho muito pra conversar contigo.</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Oi, Rafa. Queria muito te ver.</p>
+            </div>
+            <div class="dialogue-card c-rafa">
+                <div class="char-header"><div class="char-main">RAFA</div></div>
+                <p>Você acha que tem lugar pra mim no culto de hoje?</p>
+            </div>
+            <div class="dialogue-card c-manu">
+                <div class="char-header"><div class="char-main">MANU</div></div>
+                <p>Eu nunca deixei de guardar seu lugar.</p>
+                <span class="stage-direction">[Elas se abraçam.]</span>
+            </div>
+            <div class="dialogue-card c-jesus">
+                <div class="char-header"><div class="char-main">JESUS</div></div>
+                <p><strong>FIM</strong></p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
