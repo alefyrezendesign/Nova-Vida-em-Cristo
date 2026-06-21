@@ -326,12 +326,12 @@ main { max-width: var(--max-width); margin: 0 auto; padding-bottom: 80px; }
 table { width: 100%; border-collapse: collapse; min-width: 280px; }
 
 .characters-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    align-items: start;
+    column-count: 2;
+    column-gap: 10px;
 }
 .char-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
     background: #f8fafc;
     padding: 12px 14px;
     border-radius: 8px;
